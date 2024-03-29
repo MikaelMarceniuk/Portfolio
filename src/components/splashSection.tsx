@@ -10,7 +10,9 @@ const Wrapper = styled.section`
 const TopContent = styled.div`
 	display: flex;
 	justify-content: space-between;
-	gap: 1rem;
+	gap: 20px;
+
+	overflow-x: hidden;
 `
 
 const BottonContent = styled.div`
@@ -67,10 +69,6 @@ const LocalizationWrapper = styled.div`
 	font-size: 0.75rem;
 `
 
-const ImageWrapper = styled.div`
-	
-`
-
 const Image = styled.img`
 	border: 1px solid ${({theme}) => theme.colors.gray500};
 	border-radius: 10px;
@@ -88,9 +86,7 @@ const SplashSection = () => {
 						Ribeirão Preto, SP
 					</LocalizationWrapper>
 				</InformationWrapper>
-				<ImageWrapper>
-					<Image src='https://github.com/MikaelMarceniuk.png?size=132' />
-				</ImageWrapper>
+					<Image src='https://github.com/MikaelMarceniuk.png?size=154' />
 			</TopContent>
 			<BottonContent>
 				<GetInTouchBtn>
