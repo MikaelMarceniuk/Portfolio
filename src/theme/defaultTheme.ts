@@ -13,6 +13,6 @@ const DefaultTheme = {
 		deepPurple: '#551A8B',
 		electricBlue: '#0000EE'
 	}
-}
+} as const
 
 export default DefaultTheme
