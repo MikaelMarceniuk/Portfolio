@@ -1,5 +1,6 @@
 import styled, { ThemeProvider } from "styled-components"
 import DefaultTheme from "./theme/defaultTheme"
+import ScrollProvider from "./context/scrollContext"
 
 import Navbar from "./components/navbar"
 import Header from "./components/header"
@@ -19,17 +20,19 @@ const AppWrapper = styled.main`
 const App = () => {
   return (
     <ThemeProvider theme={DefaultTheme}>
-      <AppWrapper>
-        <Navbar />
-        <Header />
-        <PageContentWrapper>
-          <AboutSection />
-          <WorkExperienceSection />
-          <EducationSection />
-          <SkillsSection />
-          <GetInTouchSection />
-        </PageContentWrapper>
-      </AppWrapper>
+      <ScrollProvider>
+        <AppWrapper>
+          <Navbar />
+          <Header />
+          <PageContentWrapper>
+            <AboutSection />
+            <WorkExperienceSection />
+            <EducationSection />
+            <SkillsSection />
+            <GetInTouchSection />
+          </PageContentWrapper>
+        </AppWrapper>
+      </ScrollProvider>
     </ThemeProvider>
   )
 }
