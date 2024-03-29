@@ -21,7 +21,7 @@ const BottonContent = styled.div`
 	display: flex;
 `
 
-const GetInTouchBtn = styled.button`
+const GetInTouchBtn = styled.a`
 	padding: 10px;
 
 	flex: 1;
@@ -35,6 +35,7 @@ const GetInTouchBtn = styled.button`
 
 	background-color: ${({theme}) => theme.colors.gray300};
 	color: ${({theme}) => theme.colors.gray800};
+	text-decoration: none;
 `
 
 const InformationWrapper = styled.div`
@@ -90,7 +91,7 @@ const Header = () => {
 					<Image src='https://github.com/MikaelMarceniuk.png?size=154' alt="Mikael Marceniuk Github Picture"/>
 			</TopContent>
 			<BottonContent>
-				<GetInTouchBtn>
+				<GetInTouchBtn href="#getInTouchSection">
 					<EnvelopeSimple size={18} />
 					Get in touch
 				</GetInTouchBtn>
