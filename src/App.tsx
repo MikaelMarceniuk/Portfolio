@@ -1,8 +1,8 @@
 import styled, { ThemeProvider } from "styled-components"
 import DefaultTheme from "./theme/defaultTheme"
 
+import Navbar from "./components/navbar"
 import Header from "./components/header"
-import SplashSection from "./components/splashSection"
 
 const AppWrapper = styled.main`
   min-height: 100vh;
@@ -14,8 +14,8 @@ const App = () => {
   return (
     <ThemeProvider theme={DefaultTheme}>
       <AppWrapper>
+        <Navbar />
         <Header />
-        <SplashSection />
       </AppWrapper>
     </ThemeProvider>
   )
