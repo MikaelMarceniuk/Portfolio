@@ -7,6 +7,7 @@ import PageContentWrapper from "./components/ui/pageContentWrapper"
 import AboutSection from "./components/sections/aboutSection"
 import WorkExperienceSection from "./components/sections/workExperienceSection"
 import EducationSection from "./components/sections/educationSection"
+import SkillsSection from "./components/sections/skillsSection"
 
 const AppWrapper = styled.main`
   min-height: 100vh;
@@ -24,6 +25,7 @@ const App = () => {
           <AboutSection />
           <WorkExperienceSection />
           <EducationSection />
+          <SkillsSection />
         </PageContentWrapper>
       </AppWrapper>
     </ThemeProvider>
