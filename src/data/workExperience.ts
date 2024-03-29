@@ -1,6 +1,6 @@
-import WorkExperienceProps from "../interfaces/WorkExperience"
+import IWorkExperienceProps from "../interfaces/IWorkExperience"
 
-const WorkExperienceData: WorkExperienceProps[] = [
+const WorkExperienceData: IWorkExperienceProps[] = [
 	{
 		role: 'Desenvolvedor Fullstack',
 		company: 'FalifeTech',

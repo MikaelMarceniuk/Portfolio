@@ -1,4 +1,4 @@
-interface WorkExperienceProps {
+interface IWorkExperience {
 	role: string
 	company: string
 	startYear: number
@@ -6,4 +6,4 @@ interface WorkExperienceProps {
 	description: string[]
 }
 
-export default WorkExperienceProps
+export default IWorkExperience

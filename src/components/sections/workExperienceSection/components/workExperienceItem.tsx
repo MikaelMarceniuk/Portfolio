@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import WorkExperienceProps from "../../../../interfaces/WorkExperience"
+import IWorkExperience from "../../../../interfaces/IWorkExperience"
 
 const Wrapper = styled.div`
 	display: flex;
@@ -42,7 +42,7 @@ const Description = styled.div`
 	color: ${({theme}) => theme.colors.gray700};
 `
 
-const WorkExperienceItem: React.FC<WorkExperienceProps> = ({...workExp}) => {
+const WorkExperienceItem: React.FC<IWorkExperience> = ({...workExp}) => {
 	return (
 		<Wrapper>
 			<div>
