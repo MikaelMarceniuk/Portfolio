@@ -5,6 +5,7 @@ import Navbar from "./components/navbar"
 import Header from "./components/header"
 import PageContentWrapper from "./components/ui/pageContentWrapper"
 import AboutSection from "./components/sections/aboutSection"
+import WorkExperienceSection from "./components/sections/workExperienceSection"
 
 const AppWrapper = styled.main`
   min-height: 100vh;
@@ -20,6 +21,7 @@ const App = () => {
         <Header />
         <PageContentWrapper>
           <AboutSection />
+          <WorkExperienceSection />
         </PageContentWrapper>
       </AppWrapper>
     </ThemeProvider>
