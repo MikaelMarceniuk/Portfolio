@@ -16,7 +16,7 @@ const SkillsSection = () => {
 		<BaseSection.Wrapper>
 			<BaseSection.Title>Skills</BaseSection.Title>
 			<SkillBadgeList>
-				{SkillsData.map(skill => <SkillBadge title={skill} />)}
+				{SkillsData.map((skill, i) => <SkillBadge key={i} title={skill} />)}
 			</SkillBadgeList>
 		</BaseSection.Wrapper>
 	)

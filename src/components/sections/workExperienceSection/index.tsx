@@ -14,7 +14,7 @@ const WorkExperienceSection = () => {
 		<BaseSection.Wrapper>
 			<BaseSection.Title>Work Experience</BaseSection.Title>
 			<WorkExperienceList>
-				{WorkExperienceData.map(work => <WorkExperienceItem {...work} />)}
+				{WorkExperienceData.map((work, i) => <WorkExperienceItem key={i} {...work} />)}
 			</WorkExperienceList>
 		</BaseSection.Wrapper>
 	)

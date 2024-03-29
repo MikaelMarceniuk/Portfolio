@@ -14,7 +14,7 @@ const EducationSection = () => {
 		<BaseSection.Wrapper>
 			<BaseSection.Title>Education</BaseSection.Title>
 			<EducationList>
-				{EducationData.map(edu => <EducationItem {...edu} />)}
+				{EducationData.map((edu, i) => <EducationItem key={i} {...edu} />)}
 			</EducationList>
 		</BaseSection.Wrapper>
 	)

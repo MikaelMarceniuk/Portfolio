@@ -52,7 +52,7 @@ const WorkExperienceItem: React.FC<IWorkExperience> = ({...workExp}) => {
 			<ContentWrapper>
 				<Role>{workExp.role}</Role>
 				<Description>
-					{workExp.description.map(desc => <p dangerouslySetInnerHTML={{__html: desc}}/>)}
+					{workExp.description.map((desc, i) => <p key={i} dangerouslySetInnerHTML={{__html: desc}}/>)}
 				</Description>
 			</ContentWrapper>
 		</Wrapper>

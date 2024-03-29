@@ -46,7 +46,7 @@ const EducationItem: React.FC<IEducation> = ({...educationExp}) => {
 			</div>
 			<ContentWrapper>
 				<Description>
-					{educationExp.description.map(desc => <p dangerouslySetInnerHTML={{__html: desc}}/>)}
+					{educationExp.description.map((desc, i) => <p key={i} dangerouslySetInnerHTML={{__html: desc}}/>)}
 				</Description>
 			</ContentWrapper>
 		</Wrapper>
