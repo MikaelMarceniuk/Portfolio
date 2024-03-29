@@ -47,7 +47,7 @@ const InformationWrapper = styled.div`
 	color: ${({theme}) => theme.colors.gray800};
 `
 
-const Name = styled.p`
+const Name = styled.h1`
 	font-size: 1.5rem;
 	font-weight: 800;
 	line-height: 1.6rem;
@@ -55,8 +55,9 @@ const Name = styled.p`
 	color: ${({theme}) => theme.colors.gray900};
 `
 
-const Subtext = styled.p`
+const Subtext = styled.h2`
 	font-size: 0.9rem;
+	font-weight: 300;
 	line-height: 1.2rem;
 	color: ${({theme}) => theme.colors.gray800};
 `
@@ -86,7 +87,7 @@ const Header = () => {
 						Ribeirão Preto, SP
 					</LocalizationWrapper>
 				</InformationWrapper>
-					<Image src='https://github.com/MikaelMarceniuk.png?size=154' />
+					<Image src='https://github.com/MikaelMarceniuk.png?size=154' alt="Mikael Marceniuk Github Picture"/>
 			</TopContent>
 			<BottonContent>
 				<GetInTouchBtn>
