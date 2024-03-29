@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import WorkExperienceProps from "../../../../interfaces/IWorkExperience"
 import IEducation from "../../../../interfaces/IEducation"
 
 const Wrapper = styled.div`
