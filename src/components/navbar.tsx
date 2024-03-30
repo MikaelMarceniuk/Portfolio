@@ -8,11 +8,21 @@ const Wrapper = styled.header`
 	height: 60px;
 	padding: 0 20px;
 
+  background-color: ${({theme}) => theme.colors.gray200};
+`
+
+const Content = styled.div`
+	height: 100%;
+
+	margin: 0 auto;
+
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 
-  background-color: ${({theme}) => theme.colors.gray200};
+	@media (min-width: ${({theme}) => theme.mediaQueries.tablet}px) {
+		max-width: 700px;
+	}
 `
 
 const ImageContainer = styled.div`
@@ -66,18 +76,20 @@ const Navbar = () => {
 		<>
 			<FixedNavbar isHidden={scrollPosition < 320}/>
 			<Wrapper>
-				<ImageContainer>
-					<Image src='https://github.com/MikaelMarceniuk.png?size=34' />
-				</ImageContainer>
-				<BtnsContainer>
-					<AvailableToWorkWrapper>
-						<Ping />
-						<span>Available to work</span>
-					</AvailableToWorkWrapper>
-					<DownloadCVBtn>
-						<DownloadCVIcon size={18} weight="bold" />
-					</DownloadCVBtn>
-				</BtnsContainer>
+				<Content>
+					<ImageContainer>
+						<Image src='https://github.com/MikaelMarceniuk.png?size=34' />
+					</ImageContainer>
+					<BtnsContainer>
+						<AvailableToWorkWrapper>
+							<Ping />
+							<span>Available to work</span>
+						</AvailableToWorkWrapper>
+						<DownloadCVBtn>
+							<DownloadCVIcon size={18} weight="bold" />
+						</DownloadCVBtn>
+					</BtnsContainer>
+				</Content>
 			</Wrapper>
 		</>
 	)

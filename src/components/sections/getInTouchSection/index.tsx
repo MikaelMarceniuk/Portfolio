@@ -50,7 +50,7 @@ const GetInTouchSection = () => {
 				</ContactContent>
 			</ContactWrapper>
 
-			<ContactWrapper as={'a'} href={Constants.wppLinkToMessageMe}>
+			<ContactWrapper as={'a'} href={Constants.wppLinkToMessageMe} target='_blank'>
 				<h4>Whatsapp</h4>
 				<ContactContent>
 					<p>{Constants.wppNumber}</p>

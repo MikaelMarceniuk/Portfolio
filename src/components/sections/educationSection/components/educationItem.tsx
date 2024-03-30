@@ -9,15 +9,23 @@ const Wrapper = styled.div`
 	color: ${({theme}) => theme.colors.gray900};
 `
 
-const Place = styled.h4`
-	font-size: 1rem;
-	font-weight: 700;
-`
+const InfoWrapper = styled.div`
+	& h4 {
+		font-size: 1rem;
+		font-weight: 700;
+	}
 
-const StartEndDate = styled.p`
-	font-size: 0.75rem;
-	font-weight: 400;
-	color: ${({theme}) => theme.colors.gray600};
+	& p {
+		font-size: 0.75rem;
+		font-weight: 400;
+		color: ${({theme}) => theme.colors.gray600};
+	}
+
+	@media (min-width: ${({theme}) => theme.mediaQueries.mobileLarge}px) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 `
 
 const ContentWrapper = styled.div`
@@ -39,10 +47,10 @@ const Description = styled.div`
 const EducationItem: React.FC<IEducation> = ({...educationExp}) => {
 	return (
 		<Wrapper>
-			<div>
-				<Place>{educationExp.place}</Place>
-				<StartEndDate>{educationExp.startYear} - {educationExp.finishYear || 'Atualmente'}</StartEndDate>
-			</div>
+			<InfoWrapper>
+				<h4>{educationExp.place}</h4>
+				<p>{educationExp.startYear} - {educationExp.finishYear || 'Atualmente'}</p>
+			</InfoWrapper>
 			<ContentWrapper>
 				<Description>
 					{educationExp.description.map((desc, i) => <p key={i} dangerouslySetInnerHTML={{__html: desc}}/>)}

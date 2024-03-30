@@ -14,6 +14,11 @@ const DefaultTheme = {
 		electricBlue: '#0000EE',
 
 		green: '#50C878'
+	},
+
+	mediaQueries: {
+		mobileLarge: 425,
+		tablet: 810
 	}
 } as const
 

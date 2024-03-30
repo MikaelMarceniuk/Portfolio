@@ -9,15 +9,23 @@ const Wrapper = styled.div`
 	color: ${({theme}) => theme.colors.gray900};
 `
 
-const CompanyName = styled.h4`
-	font-size: 1rem;
-	font-weight: 700;
-`
+const InfoWrapper = styled.div`
+	& h4 {
+		font-size: 1rem;
+		font-weight: 700;
+	}
 
-const StartEndDate = styled.p`
-	font-size: 0.75rem;
-	font-weight: 400;
-	color: ${({theme}) => theme.colors.gray600};
+	& p {
+		font-size: 0.75rem;
+		font-weight: 400;
+		color: ${({theme}) => theme.colors.gray600};
+	}
+
+	@media (min-width: ${({theme}) => theme.mediaQueries.mobileLarge}px) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 `
 
 const ContentWrapper = styled.div`
@@ -45,10 +53,10 @@ const Description = styled.div`
 const WorkExperienceItem: React.FC<IWorkExperience> = ({...workExp}) => {
 	return (
 		<Wrapper>
-			<div>
-				<CompanyName>{workExp.company}</CompanyName>
-				<StartEndDate>{workExp.startYear} - {workExp.finishYear || 'Atualmente'}</StartEndDate>
-			</div>
+			<InfoWrapper>
+				<h4>{workExp.company}</h4>
+				<p>{workExp.startYear} - {workExp.finishYear || 'Atualmente'}</p>
+			</InfoWrapper>
 			<ContentWrapper>
 				<Role>{workExp.role}</Role>
 				<Description>

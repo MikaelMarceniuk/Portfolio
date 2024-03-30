@@ -24,6 +24,21 @@ const Wrapper = styled.header<IFixedNavbarProps>`
 	transition: top 0.2s;
 `
 
+const Content = styled.div`
+	width: 100%;
+	height: 100%;
+
+	margin: 0 auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@media (min-width: ${({theme}) => theme.mediaQueries.tablet}px) {
+		max-width: 700px;
+	}
+`
+
 const ImageContainer = styled.div`
 	width: 36px;
 	height: 36px;
@@ -71,7 +86,8 @@ const AvailableToWorkWrapper = styled.div`
 const FixedNavbar: React.FC<IFixedNavbarProps> = ({isHidden}) => {
 	return (
 		<Wrapper isHidden={isHidden}>
-			<ImageContainer>
+			<Content>
+				<ImageContainer>
 					<Image src='https://github.com/MikaelMarceniuk.png?size=34' />
 				</ImageContainer>
 				<BtnsContainer>
@@ -83,6 +99,7 @@ const FixedNavbar: React.FC<IFixedNavbarProps> = ({isHidden}) => {
 						<DownloadCVIcon size={18} weight="bold" />
 					</DownloadCVBtn>
 				</BtnsContainer>
+			</Content>
 		</Wrapper>
 	)
 }
