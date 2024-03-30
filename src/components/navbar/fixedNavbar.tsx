@@ -1,7 +1,9 @@
-import { DownloadSimple } from "phosphor-react"
-import { styled } from "styled-components"
-import Ping from "./ping"
+import { styled, useTheme } from "styled-components"
+import Ping from "../ping"
 import { useTranslation } from 'react-i18next'
+import { useScreenDimensionContext } from "../../context/screenDimensionContext"
+import DownloadCvBtn from "./components/downloadCvBtn"
+import ChangeLanguageBtn from "./components/changeLanguageBtn"
 
 interface IFixedNavbarProps {
 	isHidden: boolean
@@ -55,24 +57,6 @@ const Image = styled.img`
 	border: 1px solid ${({theme}) => theme.colors.gray500};
 `
 
-const DownloadCVBtn = styled.button`
-	width: 36px;
-	height: 36px;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	border: 1px solid ${({theme}) => theme.colors.gray500};
-	border-radius: 4px;
-
-	background-color: ${({theme}) => theme.colors.gray300};
-`
-
-const DownloadCVIcon = styled(DownloadSimple)`
-	color: ${({theme}) => theme.colors.gray900};
-`
-
 const AvailableToWorkWrapper = styled.div`
 	display: flex;
 	align-items: center;
@@ -85,6 +69,8 @@ const AvailableToWorkWrapper = styled.div`
 `
 
 const FixedNavbar: React.FC<IFixedNavbarProps> = ({isHidden}) => {
+	const { screenWidth } = useScreenDimensionContext()
+	const { mediaQueries } = useTheme()
 	const { t } = useTranslation()
 
 	return (
@@ -94,13 +80,14 @@ const FixedNavbar: React.FC<IFixedNavbarProps> = ({isHidden}) => {
 					<Image src='https://github.com/MikaelMarceniuk.png?size=34' />
 				</ImageContainer>
 				<BtnsContainer>
-					<AvailableToWorkWrapper>
-						<Ping />
-						<span>{t('navbarAvailableToWork')}</span>
-					</AvailableToWorkWrapper>
-					<DownloadCVBtn>
-						<DownloadCVIcon size={18} weight="bold" />
-					</DownloadCVBtn>
+					{screenWidth >= mediaQueries.mobileSmall && 
+						<AvailableToWorkWrapper>
+							<Ping />
+							<span>{t('navbarAvailableToWork')}</span>
+						</AvailableToWorkWrapper>
+					}
+					<DownloadCvBtn />
+					<ChangeLanguageBtn />
 				</BtnsContainer>
 			</Content>
 		</Wrapper>

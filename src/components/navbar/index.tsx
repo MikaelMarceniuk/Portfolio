@@ -1,9 +1,11 @@
-import { DownloadSimple } from "phosphor-react"
-import { styled } from "styled-components"
+import { styled, useTheme } from "styled-components"
 import FixedNavbar from "./fixedNavbar"
-import { useScrollContext } from "../context/scrollContext"
-import Ping from "./ping"
+import { useScrollContext } from "../../context/scrollContext"
+import Ping from "../ping"
 import { useTranslation } from 'react-i18next'
+import { useScreenDimensionContext } from "../../context/screenDimensionContext"
+import DownloadCvBtn from "./components/downloadCvBtn"
+import ChangeLanguageBtn from "./components/changeLanguageBtn"
 
 const Wrapper = styled.header`
 	height: 60px;
@@ -33,30 +35,13 @@ const ImageContainer = styled.div`
 
 const BtnsContainer = styled.div`
 	display: flex;
+	align-items: center;
 	gap: 6px;
 `
 
 const Image = styled.img`
 	border-radius: 999px;
 	border: 1px solid ${({theme}) => theme.colors.gray500};
-`
-
-const DownloadCVBtn = styled.button`
-	width: 36px;
-	height: 36px;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	border: 1px solid ${({theme}) => theme.colors.gray500};
-	border-radius: 4px;
-
-	background-color: ${({theme}) => theme.colors.gray300};
-`
-
-const DownloadCVIcon = styled(DownloadSimple)`
-	color: ${({theme}) => theme.colors.gray900};
 `
 
 const AvailableToWorkWrapper = styled.div`
@@ -72,6 +57,8 @@ const AvailableToWorkWrapper = styled.div`
 
 const Navbar = () => {
 	const { scrollPosition } = useScrollContext()
+	const { screenWidth } = useScreenDimensionContext()
+	const { mediaQueries } = useTheme()
 	const { t } = useTranslation()
 
 	return (
@@ -83,13 +70,14 @@ const Navbar = () => {
 						<Image src='https://github.com/MikaelMarceniuk.png?size=34' />
 					</ImageContainer>
 					<BtnsContainer>
-						<AvailableToWorkWrapper>
-							<Ping />
-							<span>{t('navbarAvailableToWork')}</span>
-						</AvailableToWorkWrapper>
-						<DownloadCVBtn>
-							<DownloadCVIcon size={18} weight="bold" />
-						</DownloadCVBtn>
+						{screenWidth >= mediaQueries.mobileSmall && 
+							<AvailableToWorkWrapper>
+								<Ping />
+								<span>{t('navbarAvailableToWork')}</span>
+							</AvailableToWorkWrapper>
+						}
+						<DownloadCvBtn />
+						<ChangeLanguageBtn />
 					</BtnsContainer>
 				</Content>
 			</Wrapper>

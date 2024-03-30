@@ -17,6 +17,7 @@ const DefaultTheme = {
 	},
 
 	mediaQueries: {
+		mobileSmall: 340,
 		mobileLarge: 425,
 		tablet: 810
 	}
