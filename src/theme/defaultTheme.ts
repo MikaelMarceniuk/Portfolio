@@ -11,7 +11,9 @@ const DefaultTheme = {
 		gray900: '#F0F0F0',
 
 		deepPurple: '#551A8B',
-		electricBlue: '#0000EE'
+		electricBlue: '#0000EE',
+
+		green: '#50C878'
 	}
 } as const
 

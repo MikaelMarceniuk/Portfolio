@@ -2,6 +2,7 @@ import { DownloadSimple } from "phosphor-react"
 import { styled } from "styled-components"
 import FixedNavbar from "./fixedNavbar"
 import { useScrollContext } from "../context/scrollContext"
+import Ping from "./ping"
 
 const Wrapper = styled.header`
 	height: 60px;
@@ -17,6 +18,11 @@ const Wrapper = styled.header`
 const ImageContainer = styled.div`
 	width: 36px;
 	height: 36px;
+`
+
+const BtnsContainer = styled.div`
+	display: flex;
+	gap: 6px;
 `
 
 const Image = styled.img`
@@ -42,6 +48,17 @@ const DownloadCVIcon = styled(DownloadSimple)`
 	color: ${({theme}) => theme.colors.gray900};
 `
 
+const AvailableToWorkWrapper = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 6px;
+
+	& span {
+		font-size: 0.8rem;
+		color: ${({theme}) => theme.colors.gray700}
+	}
+`
+
 const Navbar = () => {
 	const { scrollPosition } = useScrollContext()
 
@@ -52,9 +69,15 @@ const Navbar = () => {
 				<ImageContainer>
 					<Image src='https://github.com/MikaelMarceniuk.png?size=34' />
 				</ImageContainer>
-				<DownloadCVBtn>
-					<DownloadCVIcon size={18} weight="bold" />
-				</DownloadCVBtn>
+				<BtnsContainer>
+					<AvailableToWorkWrapper>
+						<Ping />
+						<span>Available to work</span>
+					</AvailableToWorkWrapper>
+					<DownloadCVBtn>
+						<DownloadCVIcon size={18} weight="bold" />
+					</DownloadCVBtn>
+				</BtnsContainer>
 			</Wrapper>
 		</>
 	)
