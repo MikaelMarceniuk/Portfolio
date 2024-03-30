@@ -3,6 +3,7 @@ import { styled } from "styled-components"
 import FixedNavbar from "./fixedNavbar"
 import { useScrollContext } from "../context/scrollContext"
 import Ping from "./ping"
+import { useTranslation } from 'react-i18next'
 
 const Wrapper = styled.header`
 	height: 60px;
@@ -71,6 +72,7 @@ const AvailableToWorkWrapper = styled.div`
 
 const Navbar = () => {
 	const { scrollPosition } = useScrollContext()
+	const { t } = useTranslation()
 
 	return (
 		<>
@@ -83,7 +85,7 @@ const Navbar = () => {
 					<BtnsContainer>
 						<AvailableToWorkWrapper>
 							<Ping />
-							<span>Available to work</span>
+							<span>{t('navbarAvailableToWork')}</span>
 						</AvailableToWorkWrapper>
 						<DownloadCVBtn>
 							<DownloadCVIcon size={18} weight="bold" />

@@ -1,6 +1,6 @@
 import styled, { ThemeProvider } from "styled-components"
 import DefaultTheme from "./theme/defaultTheme"
-import ScrollProvider from "./context/scrollContext"
+import './i18n/config'
 
 import Navbar from "./components/navbar"
 import Header from "./components/header"
@@ -11,6 +11,7 @@ import EducationSection from "./components/sections/educationSection"
 import SkillsSection from "./components/sections/skillsSection"
 import GetInTouchSection from "./components/sections/getInTouchSection"
 import ScreenDimensionProvider from "./context/screenDimensionContext"
+import ScrollProvider from "./context/scrollContext"
 
 const AppWrapper = styled.main`
   height: 100%;
