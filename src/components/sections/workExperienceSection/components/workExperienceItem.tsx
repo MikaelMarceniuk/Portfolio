@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import IWorkExperience from "../../../../interfaces/IWorkExperience"
+import { useTranslation } from 'react-i18next'
 
 const Wrapper = styled.div`
 	display: flex;
@@ -51,11 +52,13 @@ const Description = styled.div`
 `
 
 const WorkExperienceItem: React.FC<IWorkExperience> = ({...workExp}) => {
+	const { t } = useTranslation()
+
 	return (
 		<Wrapper>
 			<InfoWrapper>
 				<h4>{workExp.company}</h4>
-				<p>{workExp.startYear} - {workExp.finishYear || 'Atualmente'}</p>
+				<p>{workExp.startYear} - {workExp.finishYear || t('workExperienceCurrentWork')}</p>
 			</InfoWrapper>
 			<ContentWrapper>
 				<Role>{workExp.role}</Role>

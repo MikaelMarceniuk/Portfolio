@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import * as BaseSection from '../../ui/baseSection'
 import { Copy, WhatsappLogo } from 'phosphor-react'
 import Constants from '../../../constants'
+import { useTranslation } from 'react-i18next'
 
 const ContactWrapper = styled.div`
 	display: flex;
@@ -34,13 +35,15 @@ const iconSize = 18
 
 
 const GetInTouchSection = () => {
+	const { t } = useTranslation()
+
 	const handleCopyEmail = () => {
 		navigator.clipboard.writeText(Constants.email)
 	}
 
 	return (
 		<BaseSection.Wrapper id='getInTouchSection'>
-			<BaseSection.Title>Get in touch</BaseSection.Title>
+			<BaseSection.Title>{t('getInTouchTitle')}</BaseSection.Title>
 
 			<ContactWrapper onClick={handleCopyEmail}>
 				<h4>Email</h4>

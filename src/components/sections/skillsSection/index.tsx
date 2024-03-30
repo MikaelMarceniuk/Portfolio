@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import SkillsData from '../../../data/skill'
 import * as BaseSection from '../../ui/baseSection'
 import SkillBadge from './components/skillBadge'
+import { useTranslation } from 'react-i18next'
 
 const SkillBadgeList = styled.ul`
 	display: flex;
@@ -12,9 +13,11 @@ const SkillBadgeList = styled.ul`
 `
 
 const SkillsSection = () => {
+	const { t } = useTranslation()
+
 	return (
 		<BaseSection.Wrapper>
-			<BaseSection.Title>Skills</BaseSection.Title>
+			<BaseSection.Title>{t('skillsTitle')}</BaseSection.Title>
 			<SkillBadgeList>
 				{SkillsData.map((skill, i) => <SkillBadge key={i} title={skill} />)}
 			</SkillBadgeList>

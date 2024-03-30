@@ -2,6 +2,7 @@ import { MapPin } from "phosphor-react"
 import { styled, useTheme } from "styled-components"
 import { useScreenDimensionContext } from "../../context/screenDimensionContext"
 import BottonContent from "./components/bottonContent"
+import { useTranslation } from 'react-i18next'
 
 const Wrapper = styled.section`
 	padding: 20px;
@@ -72,6 +73,7 @@ const ImageWrapper = styled.div`
 const Header = () => {
 	const { screenWidth } = useScreenDimensionContext()
 	const { mediaQueries } = useTheme()
+	const { t } = useTranslation()
 
 	return (
 		<Wrapper>
@@ -79,7 +81,7 @@ const Header = () => {
 				<TopContent>
 					<InformationWrapper>
 						<Name>Mikael Marceniuk</Name>
-						<Subtext>Designer & Fullstack Developer</Subtext>
+						<Subtext>{t('headerRole')}</Subtext>
 						<LocalizationWrapper>
 							<MapPin size={12} />
 							Ribeirão Preto, SP

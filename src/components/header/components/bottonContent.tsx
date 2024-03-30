@@ -1,5 +1,6 @@
 import { EnvelopeSimple } from "phosphor-react"
 import styled from "styled-components"
+import { useTranslation } from 'react-i18next'
 
 const Wrapper = styled.div`
 	margin-top: 16px;
@@ -22,18 +23,16 @@ const Wrapper = styled.div`
 		color: ${({theme}) => theme.colors.gray800};
 		text-decoration: none;
 	}
-
-	@media (min-width: ${({theme}) => theme.mediaQueries.tablet}px) {
-		width: 150px;
-	}
 `
 
 const BottonContent = () => {
+	const { t } = useTranslation()
+
 	return (
 		<Wrapper>
 			<a href="#getInTouchSection">
 				<EnvelopeSimple size={18} />
-				Get in touch
+				{t('headerGetInTouch')}
 			</a>
 		</Wrapper>
 	)

@@ -1,6 +1,7 @@
 import { DownloadSimple } from "phosphor-react"
 import { styled } from "styled-components"
 import Ping from "./ping"
+import { useTranslation } from 'react-i18next'
 
 interface IFixedNavbarProps {
 	isHidden: boolean
@@ -84,6 +85,8 @@ const AvailableToWorkWrapper = styled.div`
 `
 
 const FixedNavbar: React.FC<IFixedNavbarProps> = ({isHidden}) => {
+	const { t } = useTranslation()
+
 	return (
 		<Wrapper isHidden={isHidden}>
 			<Content>
@@ -93,7 +96,7 @@ const FixedNavbar: React.FC<IFixedNavbarProps> = ({isHidden}) => {
 				<BtnsContainer>
 					<AvailableToWorkWrapper>
 						<Ping />
-						<span>Available to work</span>
+						<span>{t('navbarAvailableToWork')}</span>
 					</AvailableToWorkWrapper>
 					<DownloadCVBtn>
 						<DownloadCVIcon size={18} weight="bold" />
