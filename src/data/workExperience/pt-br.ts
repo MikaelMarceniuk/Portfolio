@@ -1,4 +1,4 @@
-import IWorkExperienceProps from "../interfaces/IWorkExperience"
+import IWorkExperienceProps from "../../interfaces/IWorkExperience"
 
 const WorkExperienceData: IWorkExperienceProps[] = [
 	{

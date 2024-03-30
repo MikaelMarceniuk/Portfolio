@@ -1,0 +1,5 @@
+export default [
+	"I'm a Fullstack developer with almost 4 years of experience in Node.js and React, passionate about turning concepts into functional code. My strong understanding of these technologies enables me to create scalable web applications and engaging user interfaces.",
+	'I have knowledge of languages such as Java, C#, and Python, but I excel and have more professional experience with JavaScript and Node.js. In addition to that, I have expertise in frameworks like React, React Native, Next.js, and Nest.js.',
+	"I possess knowledge of design patterns such as S.O.L.I.D., Clean Code, KISS, Factory Pattern, Builder Pattern, Prototype Pattern, and Observer Pattern. I'm also familiar with cloud and DevOps technologies like AWS, Google Cloud Platform, Microsoft Azure, Docker, and Kubernetes."
+]

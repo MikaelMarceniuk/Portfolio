@@ -1,14 +1,17 @@
 import * as BaseSection from '../ui/baseSection'
 import { useTranslation } from 'react-i18next'
 
+import ptBRData from '../../data/about/pt-br'
+import enUSData from '../../data/about/en-us'
+
 const AboutSection = () => {
-	const { t } = useTranslation()
+	const { t, i18n } = useTranslation()
+	const data = i18n.language == 'ptBR' ? ptBRData : enUSData
 
 	return (
 		<BaseSection.Wrapper>
 			<BaseSection.Title>{t('aboutTitle')}</BaseSection.Title>
-			<BaseSection.Paragraph>Hello, I'm Christopher Anderson, a passionate Designer and Front-end Developer based in San Francisco. I specialize in creating visually captivating interfaces and elevating user experiences. With a journey that bridges structured design environments and the dynamic realm of freelancing, my diverse portfolio showcases the fusion of creativity and functionality.</BaseSection.Paragraph>
-			<BaseSection.Paragraph>Let's bring your ideas to life, and create digital experiences that leave a lasting impact.</BaseSection.Paragraph>
+			{data.map((d, i) => <BaseSection.Paragraph key={i}>{d}</BaseSection.Paragraph>)}
 		</BaseSection.Wrapper>
 	)
 }
