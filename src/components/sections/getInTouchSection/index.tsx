@@ -26,8 +26,9 @@ const ContactContent = styled.div`
 	cursor: pointer;
 	color: ${({theme}) => theme.colors.gray800};
 
-	&:hover {
-
+	&:active {
+		background-color: ${({theme}) => theme.colors.hoverBtn};
+		transition: background-color 0.2s;
 	}
 `
 

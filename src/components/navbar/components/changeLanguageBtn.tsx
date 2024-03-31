@@ -43,8 +43,13 @@ const DropdownWrapper = styled.ul<IDropdownWrapperProps>`
 		justify-content: center;
 
 		border-bottom: 1px solid ${({theme}) => theme.colors.gray400};
-
 		list-style-type: none;
+		cursor: pointer;
+
+		&:hover {
+			background-color: ${({theme}) => theme.colors.hoverBtn};
+			transition: background-color 0.2s;
+		}
 	}
 
 	& li img {

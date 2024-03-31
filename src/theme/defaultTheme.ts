@@ -10,6 +10,8 @@ const DefaultTheme = {
 		gray800: '#C1C1C1',
 		gray900: '#F0F0F0',
 
+		hoverBtn: '#505050',
+
 		deepPurple: '#551A8B',
 		electricBlue: '#0000EE',
 

@@ -12,6 +12,12 @@ const BaseBtnWrapper = styled.button`
 	border-radius: 4px;
 
 	background-color: ${({theme}) => theme.colors.gray300};
+	cursor: pointer;
+
+	&:hover {
+		background-color: ${({theme}) => theme.colors.hoverBtn};
+		transition: background-color 0.2s;
+	}
 `
 
 export default BaseBtnWrapper

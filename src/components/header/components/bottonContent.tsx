@@ -22,6 +22,11 @@ const Wrapper = styled.div`
 		background-color: ${({theme}) => theme.colors.gray300};
 		color: ${({theme}) => theme.colors.gray800};
 		text-decoration: none;
+
+		&:hover {
+			background-color: ${({theme}) => theme.colors.hoverBtn};
+			transition: background-color 0.2s;
+		}
 	}
 `
 
