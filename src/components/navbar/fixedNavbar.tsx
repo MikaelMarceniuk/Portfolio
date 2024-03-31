@@ -87,7 +87,7 @@ const FixedNavbar: React.FC<IFixedNavbarProps> = ({isHidden}) => {
 						</AvailableToWorkWrapper>
 					}
 					<DownloadCvBtn />
-					<ChangeLanguageBtn />
+					{!isHidden && <ChangeLanguageBtn />}
 				</BtnsContainer>
 			</Content>
 		</Wrapper>
