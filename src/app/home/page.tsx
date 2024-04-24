@@ -1,6 +1,6 @@
-import HeroSection from '@/components/section/heroSection'
-import ServicesSection from '@/components/section/servicesSection'
 import { NextPage } from 'next'
+import HeroSection from './_components/heroSection'
+import ServicesSection from './_components/servicesSection'
 
 const MainPage: NextPage = () => {
 	return (
