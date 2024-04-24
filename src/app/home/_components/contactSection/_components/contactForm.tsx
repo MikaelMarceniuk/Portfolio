@@ -1,5 +1,6 @@
 'use client'
 
+import sendContactForm from '@/api/sendContactForm'
 import { Button } from '@/components/ui/button'
 import {
 	Form,
@@ -13,6 +14,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/components/ui/use-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useMutation } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -23,7 +25,7 @@ const contactFormSchema = z.object({
 	description: z.string().min(1, 'A descrição é obrigatória.'),
 })
 
-type ContactFormType = z.infer<typeof contactFormSchema>
+export type ContactFormType = z.infer<typeof contactFormSchema>
 
 const ContactForm = () => {
 	const { toast } = useToast()
@@ -40,19 +42,35 @@ const ContactForm = () => {
 		if (form.formState.isSubmitSuccessful) form.reset()
 	}, [form.formState.isSubmitSuccessful])
 
+	const sendContactMutation = useMutation({
+		mutationFn: sendContactForm,
+		onSuccess: (_, { name }) => {
+			toast({
+				title: `Ficamos felizes em saber que você se interessou pelo nosso trabalho, ${name}.`,
+				description:
+					'Seu email foi enviado com sucesso! Aguarde nossa resposta.',
+			})
+		},
+		onError: (error, { name }) => {
+			toast({
+				title: `Aconteceu um erro ao enviar email, ${name}.`,
+				description:
+					'Verifique sua conexao com a internet e tente novamente mais tarde.',
+				color: 'red',
+			})
+		},
+	})
+
 	const handleOnSubmit = async ({
 		name,
 		email,
 		description,
 	}: ContactFormType) => {
 		event?.preventDefault()
-		console.log('handleOnSubmit/data: ', { name, email, description })
-
-		await new Promise((res) => setTimeout(res, 2000))
-
-		toast({
-			title: `Ficamos felizes em saber que você se interessou pelo nosso trabalho, ${name}.`,
-			description: 'Seu email foi enviado com sucesso! Aguarde nossa resposta.',
+		await sendContactMutation.mutate({
+			name,
+			email,
+			description,
 		})
 	}
 
