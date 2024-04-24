@@ -13,6 +13,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/components/ui/use-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -35,13 +36,24 @@ const ContactForm = () => {
 		},
 	})
 
-	const handleOnSubmit = ({ name, email, description }: ContactFormType) => {
+	useEffect(() => {
+		if (form.formState.isSubmitSuccessful) form.reset()
+	}, [form.formState.isSubmitSuccessful])
+
+	const handleOnSubmit = async ({
+		name,
+		email,
+		description,
+	}: ContactFormType) => {
 		event?.preventDefault()
+		console.log('handleOnSubmit/data: ', { name, email, description })
+
+		await new Promise((res) => setTimeout(res, 2000))
+
 		toast({
 			title: `Ficamos felizes em saber que você se interessou pelo nosso trabalho, ${name}.`,
 			description: 'Seu email foi enviado com sucesso! Aguarde nossa resposta.',
 		})
-		console.log('handleOnSubmit/data: ', { name, email, description })
 	}
 
 	return (
@@ -92,7 +104,11 @@ const ContactForm = () => {
 					)}
 				/>
 
-				<Button className='w-full py-6 font-bold' type='submit'>
+				<Button
+					className='w-full py-6 font-bold'
+					type='submit'
+					disabled={form.formState.isSubmitting}
+				>
 					Enviar
 				</Button>
 			</form>
