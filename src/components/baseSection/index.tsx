@@ -10,7 +10,10 @@ export const SectionWrapper: React.FC<ISectionWrapperProps> = ({
 	...props
 }) => {
 	return (
-		<section className={cn('space-y-4 p-10 text-center', className)} {...props}>
+		<section
+			className={cn('space-y-4 p-10 pt-0 text-center', className)}
+			{...props}
+		>
 			{children}
 		</section>
 	)

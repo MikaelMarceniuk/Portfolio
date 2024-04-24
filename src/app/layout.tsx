@@ -1,4 +1,5 @@
 import Navbar from '@/components/navbar'
+import { Toaster } from '@/components/ui/toaster'
 import type { Metadata, NextPage } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -19,6 +20,7 @@ const RootLayout: NextPage<IRootLayoutProps> = ({ children }) => {
 		<html lang='pt' className='dark'>
 			<body className={`min-h-screen bg-background ${inter.className}`}>
 				<Navbar />
+				<Toaster />
 				{children}
 			</body>
 		</html>

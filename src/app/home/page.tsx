@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+import ContactSection from './_components/contactSection'
 import HeroSection from './_components/heroSection'
 import ServicesSection from './_components/servicesSection'
 
@@ -7,6 +8,7 @@ const MainPage: NextPage = () => {
 		<main>
 			<HeroSection />
 			<ServicesSection />
+			<ContactSection />
 		</main>
 	)
 }
