@@ -9,7 +9,7 @@ export interface INavbarItem {
 const NavbarItems: INavbarItem[] = [
 	{
 		label: 'Pagina Inicial',
-		hrefTo: '/',
+		hrefTo: '/home',
 		icon: 'COMPASS',
 	},
 	{

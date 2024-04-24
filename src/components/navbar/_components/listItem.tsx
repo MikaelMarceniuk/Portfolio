@@ -1,6 +1,9 @@
+'use client'
+
 import { INavbarItem } from '@/data/navbarItems'
 import { Code, Compass, Package, Phone } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const lucideIconConfigs = {
 	size: 14,
@@ -8,6 +11,8 @@ const lucideIconConfigs = {
 }
 
 const ListItem: React.FC<INavbarItem> = ({ label, hrefTo, icon }) => {
+	const pathname = usePathname()
+
 	const renderLucideIcon = () => {
 		switch (icon) {
 			case 'COMPASS':
@@ -23,12 +28,18 @@ const ListItem: React.FC<INavbarItem> = ({ label, hrefTo, icon }) => {
 				return <Phone {...lucideIconConfigs} />
 		}
 	}
-
 	return (
 		<Link href={hrefTo}>
-			<li className='flex items-center gap-2'>
-				<div className='p rounded border p-1'>{renderLucideIcon()}</div>
-				{label}
+			<li
+				data-current={hrefTo == pathname}
+				className='group flex items-center gap-2'
+			>
+				<div className='p rounded border p-1 group-data-[current=true]:bg-green-600'>
+					{renderLucideIcon()}
+				</div>
+				<span className='group-data-[current=true]:text-green-400'>
+					{label}
+				</span>
 			</li>
 		</Link>
 	)
