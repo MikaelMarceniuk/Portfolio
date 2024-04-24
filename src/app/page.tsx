@@ -1,7 +1,12 @@
+import HeroSection from '@/components/section/heroSection'
 import { NextPage } from 'next'
 
 const MainPage: NextPage = () => {
-	return <>Hello World!</>
+	return (
+		<main>
+			<HeroSection />
+		</main>
+	)
 }
 
 export default MainPage

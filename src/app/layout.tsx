@@ -19,7 +19,7 @@ const RootLayout: NextPage<IRootLayoutProps> = ({ children }) => {
 		<html lang='pt' className='dark'>
 			<body className={`min-h-screen bg-background ${inter.className}`}>
 				<Navbar />
-				<main>{children}</main>
+				{children}
 			</body>
 		</html>
 	)
