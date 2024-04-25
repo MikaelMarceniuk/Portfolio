@@ -17,11 +17,11 @@ const NavbarItems: INavbarItem[] = [
 		hrefTo: '/services',
 		icon: 'PACKAGE',
 	},
-	{
-		label: 'Projetos',
-		hrefTo: '/projects',
-		icon: 'CODE',
-	},
+	// {
+	// 	label: 'Projetos',
+	// 	hrefTo: '/projects',
+	// 	icon: 'CODE',
+	// },
 	{
 		label: 'Contato',
 		hrefTo: '/contact',
