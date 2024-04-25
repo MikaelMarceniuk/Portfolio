@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
 	const toggleMenuOpen = () => setIsOpen((oldValue) => !oldValue)
 
 	return (
-		<div className='border-b px-4'>
+		<div className='sticky top-0 border-b bg-background px-4'>
 			<div className='flex h-20 items-center justify-end'>
 				<div className='rounded border p-2' onClick={toggleMenuOpen}>
 					<Menu

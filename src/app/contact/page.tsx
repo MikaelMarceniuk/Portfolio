@@ -4,8 +4,9 @@ import {
 	SectionWrapper,
 } from '@/components/baseSection'
 import ContactForm from '@/components/contactForm'
-import { Mail } from 'lucide-react'
+import { Instagram, Linkedin } from 'lucide-react'
 import { NextPage } from 'next'
+import Link from 'next/link'
 
 const ContactPage: NextPage = () => {
 	return (
@@ -16,11 +17,22 @@ const ContactPage: NextPage = () => {
 				em contato pelo formulário e responderei nas próximas 48 horas.
 			</SectionSubtitle>
 
-			<div>
-				<div className='flex gap-2'>
-					<Mail />
-					mika.marceniuk@gmail.com
-				</div>
+			<div className='flex items-center justify-center gap-2'>
+				<Link
+					href='https://www.linkedin.com/in/mikael-marceniuk/'
+					className='flex gap-2 text-gray-200'
+					target='_blank'
+				>
+					<Linkedin />
+				</Link>
+
+				<Link
+					href='https://www.instagram.com/mi.ka__779/'
+					className='flex gap-2 text-gray-200'
+					target='_blank'
+				>
+					<Instagram />
+				</Link>
 			</div>
 
 			<ContactForm />

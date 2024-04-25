@@ -13,6 +13,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { useToast } from '@/components/ui/use-toast'
+import formatter from '@/utils/formatter'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
 import { useEffect } from 'react'
@@ -56,7 +57,6 @@ const ContactForm = () => {
 				title: `Aconteceu um erro ao enviar email, ${name}.`,
 				description:
 					'Verifique sua conexao com a internet e tente novamente mais tarde.',
-				color: 'red',
 			})
 		},
 	})
@@ -68,7 +68,7 @@ const ContactForm = () => {
 	}: ContactFormType) => {
 		event?.preventDefault()
 		await sendContactMutation.mutate({
-			name,
+			name: formatter.capitalize(name),
 			email,
 			description,
 		})
@@ -113,7 +113,7 @@ const ContactForm = () => {
 					name='description'
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Descrição breve do projeto</FormLabel>
+							<FormLabel>Breve descrição</FormLabel>
 							<FormControl>
 								<Textarea className='min-h-40' {...field} />
 							</FormControl>

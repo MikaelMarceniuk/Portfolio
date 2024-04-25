@@ -22,7 +22,7 @@ const ServicesPage: NextPage = () => {
 					Manutenção de sistemas. Você que manda.
 				</SectionSubtitle>
 
-				<ul>
+				<ul className='space-y-4 pt-4'>
 					{ServicePageItens.map((item, i) => (
 						<ServiceCardWrapper key={i}>
 							<ServiceCardHeader>

@@ -40,7 +40,7 @@ export const ServicePageItens: IServiceItem[] = [
 	{
 		title: 'Desenvolvimento de Aplicativos Mobile',
 		icon: 'SMARTPHONE',
-		text: 'Dsenvolvo apps mobile sob medida: Android e iOS. Intuitivos, eficientes, com UX impecável. Publico e do suporte nas principais lojas.',
+		text: 'Desenvolvo apps mobile sob medida: Android e iOS. Intuitivos, eficientes, com UX impecável. Publico e do suporte nas principais lojas.',
 	},
 	{
 		title: 'Manutencao de Sistemas',
