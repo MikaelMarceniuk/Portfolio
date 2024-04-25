@@ -1,6 +1,6 @@
 'use server'
 
-import { ContactFormType } from '@/app/home/_components/contactSection/_components/contactForm'
+import { ContactFormType } from '@/components/contactForm'
 import env from '@/utils/env'
 import { REST } from '@discordjs/rest'
 import { Routes } from 'discord-api-types/v8'
