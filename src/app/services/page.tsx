@@ -15,7 +15,7 @@ import { NextPage } from 'next'
 const ServicesPage: NextPage = () => {
 	return (
 		<main>
-			<SectionWrapper className='pt-10'>
+			<SectionWrapper>
 				<SectionTitle title='Servicos' />
 				<SectionSubtitle className='text-sm font-medium text-gray-400'>
 					Desenvolvimento de Landing Page, Aplicativos Web, Mobile, APIs.
@@ -24,7 +24,10 @@ const ServicesPage: NextPage = () => {
 
 				<ul className='space-y-10 pt-4'>
 					{ServicePageItens.map((item, i) => (
-						<ServiceCardWrapper key={i}>
+						<ServiceCardWrapper
+							key={i}
+							data-aos={i % 2 ? 'slide-right' : 'slide-left'}
+						>
 							<ServiceCardHeader>
 								<ServiceCardHeaderIcon icon={item.icon} />
 								{item.title}

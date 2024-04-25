@@ -23,6 +23,7 @@ const ContactPage: NextPage = () => {
 					href={links.linkedIn}
 					className='flex gap-2 text-gray-200'
 					target='_blank'
+					data-aos='slide-right'
 				>
 					<Linkedin />
 				</Link>
@@ -31,6 +32,7 @@ const ContactPage: NextPage = () => {
 					href={links.instagram}
 					className='flex gap-2 text-gray-200'
 					target='_blank'
+					data-aos='slide-up'
 				>
 					<Instagram />
 				</Link>
@@ -39,12 +41,15 @@ const ContactPage: NextPage = () => {
 					href={links.github}
 					className='flex gap-2 text-gray-200'
 					target='_blank'
+					data-aos='slide-left'
 				>
 					<Github />
 				</Link>
 			</div>
 
-			<ContactForm />
+			<div data-aos='slide-up'>
+				<ContactForm />
+			</div>
 		</SectionWrapper>
 	)
 }

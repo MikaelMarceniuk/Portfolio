@@ -30,7 +30,11 @@ export const SectionTitle: React.FC<ISectionTitleProps> = ({
 	...props
 }) => {
 	return (
-		<p className={cn('text-4xl font-bold', className)} {...props}>
+		<p
+			className={cn('text-4xl font-bold', className)}
+			data-aos='fade-up'
+			{...props}
+		>
 			{title}
 		</p>
 	)
@@ -49,6 +53,7 @@ export const SectionSubtitle: React.FC<ISectionSubtitleProps> = ({
 	return (
 		<p
 			className={cn('text-sm font-medium text-gray-400', className)}
+			data-aos='slide-right'
 			{...props}
 		>
 			{children}

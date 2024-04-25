@@ -8,14 +8,14 @@ import { Button } from '../../../../components/ui/button'
 
 const HeroSection: React.FC = () => {
 	return (
-		<SectionWrapper className='pt-16'>
+		<SectionWrapper>
 			<SectionTitle title='Criando produtos digitais, fortalecendo a marca e aprimorando experiências.' />
 			<SectionSubtitle>
 				Sou especialista em <span className='text-green-300'>Web Designer</span>{' '}
 				e <span className='text-green-300'>Desenvolvimento Full Stack.</span>
 			</SectionSubtitle>
 
-			<Button className='shadow-service-card font-bold'>
+			<Button className='shadow-service-card font-bold' data-aos='slide-left'>
 				<Link href='/contact'>Entrar em contato</Link>
 			</Button>
 		</SectionWrapper>

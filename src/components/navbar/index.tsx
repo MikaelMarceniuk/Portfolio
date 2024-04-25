@@ -8,7 +8,7 @@ import NavbarListGroup from './_components/listGroup'
 
 const Navbar: React.FC = () => {
 	return (
-		<div className='sticky top-0 border-b bg-background px-4'>
+		<div className='sticky top-0 z-10 mb-16 border-b bg-background px-4'>
 			<Accordion type='single' collapsible>
 				<AccordionItem value='navbar-menu'>
 					<AccordionTrigger className='group justify-end'>

@@ -1,5 +1,6 @@
 import Navbar from '@/components/navbar'
 import { Toaster } from '@/components/ui/toaster'
+import AosProvider from '@/context/aosProvider'
 import CustomQueryClientProvider from '@/context/customQueryClientProvider'
 import type { Metadata, NextPage } from 'next'
 import { Inter } from 'next/font/google'
@@ -19,6 +20,7 @@ interface IRootLayoutProps {
 const RootLayout: NextPage<IRootLayoutProps> = ({ children }) => {
 	return (
 		<html lang='pt' className='dark'>
+			<AosProvider />
 			<body className={`min-h-screen bg-background ${inter.className}`}>
 				<CustomQueryClientProvider>
 					<Navbar />
