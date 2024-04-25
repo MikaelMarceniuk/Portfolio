@@ -5,7 +5,7 @@ import {
 } from '@/components/baseSection'
 import ContactForm from '@/components/contactForm'
 import links from '@/data/links'
-import { Instagram, Linkedin } from 'lucide-react'
+import { Github, Instagram, Linkedin } from 'lucide-react'
 import { NextPage } from 'next'
 import Link from 'next/link'
 
@@ -33,6 +33,14 @@ const ContactPage: NextPage = () => {
 					target='_blank'
 				>
 					<Instagram />
+				</Link>
+
+				<Link
+					href={links.github}
+					className='flex gap-2 text-gray-200'
+					target='_blank'
+				>
+					<Github />
 				</Link>
 			</div>
 
