@@ -35,3 +35,23 @@ export const SectionTitle: React.FC<ISectionTitleProps> = ({
 		</p>
 	)
 }
+
+interface ISectionSubtitleProps
+	extends React.HTMLAttributes<HTMLParagraphElement> {
+	children: React.ReactNode
+}
+
+export const SectionSubtitle: React.FC<ISectionSubtitleProps> = ({
+	children,
+	className,
+	...props
+}) => {
+	return (
+		<p
+			className={cn('text-sm font-medium text-gray-400', className)}
+			{...props}
+		>
+			{children}
+		</p>
+	)
+}
