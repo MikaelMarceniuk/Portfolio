@@ -21,7 +21,7 @@ const RootLayout: NextPage<IRootLayoutProps> = ({ children }) => {
 	return (
 		<html lang='pt' className='dark'>
 			<AosProvider />
-			<body className={`min-h-screen bg-background ${inter.className}`}>
+			<body className={`min-h-screen bg-background ${inter.className} lg:flex`}>
 				<CustomQueryClientProvider>
 					<Navbar />
 					<Toaster />

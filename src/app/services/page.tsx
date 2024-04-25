@@ -14,7 +14,7 @@ import { NextPage } from 'next'
 
 const ServicesPage: NextPage = () => {
 	return (
-		<main>
+		<main className='w-full lg:m-auto lg:max-w-[690px] lg:pt-24'>
 			<SectionWrapper>
 				<SectionTitle title='Servicos' />
 				<SectionSubtitle className='text-sm font-medium text-gray-400'>

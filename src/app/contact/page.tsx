@@ -11,46 +11,48 @@ import Link from 'next/link'
 
 const ContactPage: NextPage = () => {
 	return (
-		<SectionWrapper className='pt-10'>
-			<SectionTitle title='Entre em contato' />
-			<SectionSubtitle>
-				Tem um projeto em mente? Quer fazer parceria ou trabalhar comigo? Entre
-				em contato pelo formulário e responderei nas próximas 48 horas.
-			</SectionSubtitle>
+		<main className='w-full lg:m-auto lg:max-w-[690px] lg:pt-24'>
+			<SectionWrapper className='pt-10'>
+				<SectionTitle title='Entre em contato' />
+				<SectionSubtitle>
+					Tem um projeto em mente? Quer fazer parceria ou trabalhar comigo?
+					Entre em contato pelo formulário e responderei nas próximas 48 horas.
+				</SectionSubtitle>
 
-			<div className='flex items-center justify-center gap-2'>
-				<Link
-					href={links.linkedIn}
-					className='flex gap-2 text-gray-200'
-					target='_blank'
-					data-aos='slide-right'
-				>
-					<Linkedin />
-				</Link>
+				<div className='flex items-center justify-center gap-2'>
+					<Link
+						href={links.linkedIn}
+						className='flex gap-2 text-gray-200'
+						target='_blank'
+						data-aos='slide-right'
+					>
+						<Linkedin />
+					</Link>
 
-				<Link
-					href={links.instagram}
-					className='flex gap-2 text-gray-200'
-					target='_blank'
-					data-aos='slide-up'
-				>
-					<Instagram />
-				</Link>
+					<Link
+						href={links.instagram}
+						className='flex gap-2 text-gray-200'
+						target='_blank'
+						data-aos='slide-up'
+					>
+						<Instagram />
+					</Link>
 
-				<Link
-					href={links.github}
-					className='flex gap-2 text-gray-200'
-					target='_blank'
-					data-aos='slide-left'
-				>
-					<Github />
-				</Link>
-			</div>
+					<Link
+						href={links.github}
+						className='flex gap-2 text-gray-200'
+						target='_blank'
+						data-aos='slide-left'
+					>
+						<Github />
+					</Link>
+				</div>
 
-			<div data-aos='slide-up'>
-				<ContactForm />
-			</div>
-		</SectionWrapper>
+				<div data-aos='slide-up'>
+					<ContactForm />
+				</div>
+			</SectionWrapper>
+		</main>
 	)
 }
 
