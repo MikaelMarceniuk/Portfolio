@@ -19,6 +19,7 @@ import { useMutation } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import DivScaleHoverActive from '../animations/divScaleHoverActive'
 
 const contactFormSchema = z.object({
 	name: z.string().min(1, 'O nome é obrigatório.'),
@@ -122,13 +123,15 @@ const ContactForm = () => {
 					)}
 				/>
 
-				<Button
-					className='w-full py-6 font-bold'
-					type='submit'
-					disabled={form.formState.isSubmitting}
-				>
-					Enviar
-				</Button>
+				<DivScaleHoverActive>
+					<Button
+						className='w-full py-6 font-bold'
+						type='submit'
+						disabled={form.formState.isSubmitting}
+					>
+						Enviar
+					</Button>
+				</DivScaleHoverActive>
 			</form>
 		</Form>
 	)

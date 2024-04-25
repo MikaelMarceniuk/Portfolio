@@ -1,5 +1,6 @@
 'use client'
 
+import DivScaleHoverActive from '@/components/animations/divScaleHoverActive'
 import { INavbarItem, NavigationIcons, SocialIcons } from '@/data/navbarItems'
 import {
 	Code,
@@ -63,17 +64,19 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 						href={item.hrefTo}
 						target={group == 'Redes Sociais' ? '_blank' : '_self'}
 					>
-						<li
-							data-current={item.hrefTo == pathname}
-							className='group flex items-center gap-2'
-						>
-							<div className='p rounded border p-1 group-data-[current=true]:bg-green-600'>
-								{renderLucideIcon(item.icon)}
-							</div>
-							<span className='group-data-[current=true]:text-green-400'>
-								{item.label}
-							</span>
-						</li>
+						<DivScaleHoverActive>
+							<li
+								data-current={item.hrefTo == pathname}
+								className='group flex items-center gap-2'
+							>
+								<div className='p rounded border p-1 group-data-[current=true]:bg-green-600'>
+									{renderLucideIcon(item.icon)}
+								</div>
+								<span className='group-data-[current=true]:text-green-400'>
+									{item.label}
+								</span>
+							</li>
+						</DivScaleHoverActive>
 					</Link>
 				))}
 			</ul>

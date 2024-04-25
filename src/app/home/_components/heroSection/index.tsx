@@ -1,3 +1,4 @@
+import DivScaleHoverActive from '@/components/animations/divScaleHoverActive'
 import {
 	SectionSubtitle,
 	SectionTitle,
@@ -15,9 +16,11 @@ const HeroSection: React.FC = () => {
 				e <span className='text-green-300'>Desenvolvimento Full Stack.</span>
 			</SectionSubtitle>
 
-			<Button className='font-bold shadow-service-card' data-aos='fade-left'>
-				<Link href='/contact'>Entrar em contato</Link>
-			</Button>
+			<DivScaleHoverActive>
+				<Button data-aos='fade-left' className='font-bold shadow-service-card'>
+					<Link href='/contact'>Entrar em contato</Link>
+				</Button>
+			</DivScaleHoverActive>
 		</SectionWrapper>
 	)
 }

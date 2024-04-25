@@ -3,6 +3,7 @@
 import NavbarItems from '@/data/navbarItems'
 import { AccordionItem } from '@radix-ui/react-accordion'
 import { Menu, X } from 'lucide-react'
+import DivScaleHoverActive from '../animations/divScaleHoverActive'
 import { Accordion, AccordionContent, AccordionTrigger } from '../ui/accordion'
 import NavbarListGroup from './_components/listGroup'
 
@@ -12,10 +13,12 @@ const Navbar: React.FC = () => {
 			<Accordion type='single' collapsible className='lg:hidden'>
 				<AccordionItem value='navbar-menu'>
 					<AccordionTrigger className='group justify-end'>
-						<div className='rounded border p-2'>
-							<Menu className='hidden opacity-0 transition-opacity group-data-[state=closed]:block group-data-[state=closed]:opacity-100' />
-							<X className='hidden opacity-0 transition-opacity group-data-[state=open]:block group-data-[state=open]:opacity-100' />
-						</div>
+						<DivScaleHoverActive>
+							<div className='rounded border p-2'>
+								<Menu className='hidden opacity-0 transition-opacity group-data-[state=closed]:block group-data-[state=closed]:opacity-100' />
+								<X className='hidden opacity-0 transition-opacity group-data-[state=open]:block group-data-[state=open]:opacity-100' />
+							</div>
+						</DivScaleHoverActive>
 					</AccordionTrigger>
 
 					<AccordionContent>
