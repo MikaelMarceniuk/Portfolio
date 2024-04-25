@@ -21,7 +21,10 @@ export const ServiceCardWrapper: React.FC<IServiceCardWrapperProps> = ({
 }) => {
 	return (
 		<li
-			className={cn('space-y-4 rounded border border-gray-600 p-5', className)}
+			className={cn(
+				'shadow-service-card space-y-4 rounded border border-gray-600 p-5',
+				className,
+			)}
 			{...props}
 		>
 			{children}

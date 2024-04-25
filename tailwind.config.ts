@@ -1,5 +1,3 @@
-import type { Config } from 'tailwindcss'
-
 const config = {
 	darkMode: ['class'],
 	content: [
@@ -71,6 +69,10 @@ const config = {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
+			},
+			boxShadow: {
+				'service-card':
+					'rgba(5, 162, 194, 0.3) -8px 0px 20px 0px, rgba(112, 225, 200, 0.3) 0px 0px 20px 0px, rgba(255, 178, 36, 0.3) 8px 0px 20px 0px',
 			},
 		},
 	},

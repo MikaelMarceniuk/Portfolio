@@ -11,7 +11,7 @@ const ServicesSection: React.FC = () => {
 	return (
 		<SectionWrapper>
 			<SectionTitle title='Atuando em conjunto para alcançar resultados significativos.' />
-			<ul className='space-y-4 pt-6'>
+			<ul className='space-y-10 pt-6'>
 				{HomePageServiceList.map((item, i) => (
 					<ServiceCardWrapper key={i}>
 						<ServiceCardHeader>
