@@ -113,7 +113,7 @@ const ContactForm = () => {
 					name='description'
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Descrição breve do desafio</FormLabel>
+							<FormLabel>Descrição breve do projeto</FormLabel>
 							<FormControl>
 								<Textarea className='min-h-40' {...field} />
 							</FormControl>

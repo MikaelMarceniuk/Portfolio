@@ -1,5 +1,5 @@
 import { SectionTitle, SectionWrapper } from '@/components/baseSection'
-import ContactForm from './_components/contactForm'
+import ContactForm from '@/components/contactForm'
 
 const ContactSection: React.FC = () => {
 	return (
