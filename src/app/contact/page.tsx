@@ -4,6 +4,7 @@ import {
 	SectionWrapper,
 } from '@/components/baseSection'
 import ContactForm from '@/components/contactForm'
+import links from '@/data/links'
 import { Instagram, Linkedin } from 'lucide-react'
 import { NextPage } from 'next'
 import Link from 'next/link'
@@ -19,7 +20,7 @@ const ContactPage: NextPage = () => {
 
 			<div className='flex items-center justify-center gap-2'>
 				<Link
-					href='https://www.linkedin.com/in/mikael-marceniuk/'
+					href={links.linkedIn}
 					className='flex gap-2 text-gray-200'
 					target='_blank'
 				>
@@ -27,7 +28,7 @@ const ContactPage: NextPage = () => {
 				</Link>
 
 				<Link
-					href='https://www.instagram.com/mi.ka__779/'
+					href={links.instagram}
 					className='flex gap-2 text-gray-200'
 					target='_blank'
 				>
