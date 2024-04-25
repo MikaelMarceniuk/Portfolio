@@ -9,6 +9,7 @@ const AosProvider = () => {
 		AOS.init({
 			duration: 600,
 			offset: 0,
+			once: true,
 		})
 	}, [])
 

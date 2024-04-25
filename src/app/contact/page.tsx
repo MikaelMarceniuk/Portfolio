@@ -12,7 +12,7 @@ import Link from 'next/link'
 const ContactPage: NextPage = () => {
 	return (
 		<main className='w-full lg:m-auto lg:max-w-[690px] lg:pt-24'>
-			<SectionWrapper className='pt-10'>
+			<SectionWrapper>
 				<SectionTitle title='Entre em contato' />
 				<SectionSubtitle>
 					Tem um projeto em mente? Quer fazer parceria ou trabalhar comigo?
@@ -24,7 +24,8 @@ const ContactPage: NextPage = () => {
 						href={links.linkedIn}
 						className='flex gap-2 text-gray-200'
 						target='_blank'
-						data-aos='slide-right'
+						data-aos='fade-right'
+						data-aos-offset='-100'
 					>
 						<Linkedin />
 					</Link>
@@ -33,7 +34,8 @@ const ContactPage: NextPage = () => {
 						href={links.instagram}
 						className='flex gap-2 text-gray-200'
 						target='_blank'
-						data-aos='slide-up'
+						data-aos='fade-up'
+						data-aos-offset='-100'
 					>
 						<Instagram />
 					</Link>
@@ -42,13 +44,14 @@ const ContactPage: NextPage = () => {
 						href={links.github}
 						className='flex gap-2 text-gray-200'
 						target='_blank'
-						data-aos='slide-left'
+						data-aos='fade-left'
+						data-aos-offset='-100'
 					>
 						<Github />
 					</Link>
 				</div>
 
-				<div data-aos='slide-up'>
+				<div data-aos='fade-up' data-aos-offset='-120'>
 					<ContactForm />
 				</div>
 			</SectionWrapper>

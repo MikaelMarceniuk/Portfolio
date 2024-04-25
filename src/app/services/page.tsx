@@ -26,7 +26,8 @@ const ServicesPage: NextPage = () => {
 					{ServicePageItens.map((item, i) => (
 						<ServiceCardWrapper
 							key={i}
-							data-aos={i % 2 ? 'slide-right' : 'slide-left'}
+							data-aos={i % 2 ? 'zoom-in-right' : 'zoom-in-left'}
+							data-aos-offset='-200'
 						>
 							<ServiceCardHeader>
 								<ServiceCardHeaderIcon icon={item.icon} />

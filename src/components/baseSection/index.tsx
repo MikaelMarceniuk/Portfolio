@@ -53,7 +53,7 @@ export const SectionSubtitle: React.FC<ISectionSubtitleProps> = ({
 	return (
 		<p
 			className={cn('text-sm font-medium text-gray-400', className)}
-			data-aos='slide-right'
+			data-aos='fade-right'
 			{...props}
 		>
 			{children}
