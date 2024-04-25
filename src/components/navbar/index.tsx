@@ -1,87 +1,40 @@
-import { styled, useTheme } from "styled-components"
-import FixedNavbar from "./fixedNavbar"
-import { useScrollContext } from "../../context/scrollContext"
-import Ping from "../ping"
-import { useTranslation } from 'react-i18next'
-import { useScreenDimensionContext } from "../../context/screenDimensionContext"
-import DownloadCvBtn from "./components/downloadCvBtn"
-import ChangeLanguageBtn from "./components/changeLanguageBtn"
+'use client'
 
-const Wrapper = styled.header`
-	height: 60px;
-	padding: 0 20px;
+import NavbarItems from '@/data/navbarItems'
+import { Menu, X } from 'lucide-react'
+import { useState } from 'react'
+import ListItem from './_components/listItem'
 
-  background-color: ${({theme}) => theme.colors.gray200};
-`
+const Navbar: React.FC = () => {
+	const [isOpen, setIsOpen] = useState(false)
 
-const Content = styled.div`
-	height: 100%;
-
-	margin: 0 auto;
-
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-
-	@media (min-width: ${({theme}) => theme.mediaQueries.tablet}px) {
-		max-width: 700px;
-	}
-`
-
-const ImageContainer = styled.div`
-	width: 36px;
-	height: 36px;
-`
-
-const BtnsContainer = styled.div`
-	display: flex;
-	align-items: center;
-	gap: 6px;
-`
-
-const Image = styled.img`
-	border-radius: 999px;
-	border: 1px solid ${({theme}) => theme.colors.gray500};
-`
-
-const AvailableToWorkWrapper = styled.div`
-	display: flex;
-	align-items: center;
-	gap: 6px;
-
-	& span {
-		font-size: 0.8rem;
-		color: ${({theme}) => theme.colors.gray700}
-	}
-`
-
-const Navbar = () => {
-	const { scrollPosition } = useScrollContext()
-	const { screenWidth } = useScreenDimensionContext()
-	const { mediaQueries } = useTheme()
-	const { t } = useTranslation()
+	const toggleMenuOpen = () => setIsOpen((oldValue) => !oldValue)
 
 	return (
-		<>
-			<FixedNavbar isHidden={scrollPosition < 320}/>
-			<Wrapper>
-				<Content>
-					<ImageContainer>
-						<Image src='https://github.com/MikaelMarceniuk.png?size=34' />
-					</ImageContainer>
-					<BtnsContainer>
-						{screenWidth >= mediaQueries.mobileSmall && 
-							<AvailableToWorkWrapper>
-								<Ping />
-								<span>{t('navbarAvailableToWork')}</span>
-							</AvailableToWorkWrapper>
-						}
-						<DownloadCvBtn />
-						<ChangeLanguageBtn />
-					</BtnsContainer>
-				</Content>
-			</Wrapper>
-		</>
+		<div className='border-b px-4'>
+			<div className='flex h-20 items-center justify-end'>
+				<div className='rounded border p-2' onClick={toggleMenuOpen}>
+					<Menu
+						data-active={!isOpen}
+						className='hidden opacity-0 transition-opacity data-[active=true]:block data-[active=true]:opacity-100'
+					/>
+					<X
+						data-active={isOpen}
+						className='hidden opacity-0 transition-opacity data-[active=true]:block data-[active=true]:opacity-100'
+					/>
+				</div>
+			</div>
+			<div
+				data-active={isOpen}
+				className='hidden h-0 p-2 data-[active=true]:block data-[active=true]:h-fit data-[active=true]:pb-4'
+			>
+				<ul className='flex list-none flex-col gap-4'>
+					{NavbarItems.map((item, i) => (
+						<ListItem key={i} {...item} />
+					))}
+				</ul>
+			</div>
+		</div>
 	)
 }
 
