@@ -9,7 +9,10 @@ import NavbarListGroup from './_components/listGroup'
 
 const Navbar: React.FC = () => {
 	return (
-		<div className='sticky top-0 z-10 mb-12 border-b bg-background px-4 lg:mb-0 lg:w-full lg:max-w-48 lg:border-b-0 lg:border-r'>
+		<div
+			className='sticky top-0 z-10 mb-12 border-b bg-background px-4 lg:mb-0 lg:w-full lg:max-w-48 lg:border-b-0 lg:border-r'
+			data-aos='slide-down'
+		>
 			<Accordion type='single' collapsible className='lg:hidden'>
 				<AccordionItem value='navbar-menu'>
 					<AccordionTrigger className='group justify-end'>
@@ -31,7 +34,10 @@ const Navbar: React.FC = () => {
 				</AccordionItem>
 			</Accordion>
 
-			<div className='hidden list-none flex-col gap-4 pt-24 lg:flex'>
+			<div
+				className='hidden list-none flex-col gap-4 pt-24 lg:flex'
+				data-aos='slide-right'
+			>
 				{NavbarItems.map((item, i) => (
 					<NavbarListGroup key={`list-group-${i}`} {...item} />
 				))}

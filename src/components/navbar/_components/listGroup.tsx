@@ -63,6 +63,8 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 						key={`navbar-item-${i}`}
 						href={item.hrefTo}
 						target={group == 'Redes Sociais' ? '_blank' : '_self'}
+						data-aos='slide-right'
+						data-aos-delay={50 * i}
 					>
 						<DivScaleHoverActive>
 							<li
