@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
 				e <span className='text-green-300'>Desenvolvimento Full Stack.</span>
 			</SectionSubtitle>
 
-			<DivScaleHoverActive>
+			<DivScaleHoverActive className='m-auto w-min'>
 				<Button data-aos='fade-left' className='font-bold shadow-service-card'>
 					<Link href='/contact'>Entrar em contato</Link>
 				</Button>
