@@ -15,11 +15,12 @@ export const metadata: Metadata = {
 
 interface IRootLayoutProps {
 	children: React.ReactNode
+	params: { locale: 'pt' | 'en' }
 }
 
-const RootLayout: NextPage<IRootLayoutProps> = ({ children }) => {
+const RootLayout: NextPage<IRootLayoutProps> = ({ children, params }) => {
 	return (
-		<html lang='pt' className='dark'>
+		<html lang={params.locale} className='dark'>
 			<AosProvider />
 			<body className={`min-h-screen bg-background ${inter.className} lg:flex`}>
 				<CustomQueryClientProvider>

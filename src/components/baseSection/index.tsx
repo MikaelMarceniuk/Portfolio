@@ -42,7 +42,7 @@ export const SectionTitle: React.FC<ISectionTitleProps> = ({
 
 interface ISectionSubtitleProps
 	extends React.HTMLAttributes<HTMLParagraphElement> {
-	children: React.ReactNode
+	children?: React.ReactNode
 }
 
 export const SectionSubtitle: React.FC<ISectionSubtitleProps> = ({
