@@ -5,27 +5,39 @@ export type NavigationIcons = 'COMPASS' | 'PACKAGE' | 'CODE' | 'PHONE'
 export type SocialIcons = 'LINKEDIN' | 'INSTAGRAM' | 'GITHUB' | 'CV'
 
 export interface INavbarItem {
-	group: string
+	group: Record<'pt' | 'en', string>
 	itens: {
-		label: string
+		label: Record<'pt' | 'en', string>
 		hrefTo: string
 		icon: NavigationIcons | SocialIcons
+		target: '_blank' | '_self'
 	}[]
 }
 
 const NavbarItems: INavbarItem[] = [
 	{
-		group: 'Navigation',
+		group: {
+			pt: 'Navegacao',
+			en: 'Navigation',
+		},
 		itens: [
 			{
-				label: 'Pagina Inicial',
+				label: {
+					pt: 'Pagina Inicial',
+					en: 'Home Page',
+				},
 				hrefTo: '/home',
 				icon: 'COMPASS',
+				target: '_self',
 			},
 			{
-				label: 'Servicos',
+				label: {
+					pt: 'Servicos',
+					en: 'Services',
+				},
 				hrefTo: '/services',
 				icon: 'PACKAGE',
+				target: '_self',
 			},
 			// {
 			// 	label: 'Projetos',
@@ -33,34 +45,57 @@ const NavbarItems: INavbarItem[] = [
 			// 	icon: 'CODE',
 			// },
 			{
-				label: 'Contato',
+				label: {
+					pt: 'Contato',
+					en: 'Contact',
+				},
 				hrefTo: '/contact',
 				icon: 'PHONE',
+				target: '_self',
 			},
 		],
 	},
 	{
-		group: 'Redes Sociais',
+		group: {
+			pt: 'Redes Sociais',
+			en: 'Social Medias',
+		},
 		itens: [
 			{
-				label: 'LinkedIn',
+				label: {
+					pt: 'LinkedIn',
+					en: 'LinkedIn',
+				},
 				hrefTo: links.linkedIn,
 				icon: 'LINKEDIN',
+				target: '_blank',
 			},
 			{
-				label: 'Instagram',
+				label: {
+					pt: 'Instagram',
+					en: 'Instagram',
+				},
 				hrefTo: links.instagram,
 				icon: 'INSTAGRAM',
+				target: '_blank',
 			},
 			{
-				label: 'Github',
+				label: {
+					pt: 'Github',
+					en: 'Github',
+				},
 				hrefTo: links.github,
 				icon: 'GITHUB',
+				target: '_blank',
 			},
 			{
-				label: 'Baixar CV',
+				label: {
+					pt: 'Baixar CV',
+					en: 'Download CV',
+				},
 				hrefTo: links.downloadCv,
 				icon: 'CV',
+				target: '_blank',
 			},
 		],
 	},

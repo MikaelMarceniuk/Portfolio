@@ -12,6 +12,7 @@ import {
 	Package,
 	Phone,
 } from 'lucide-react'
+import { useLocale } from 'next-intl'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -24,6 +25,9 @@ type PossibleIcons = NavigationIcons | SocialIcons
 
 const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 	const pathname = usePathname()
+	const locale = useLocale()
+	const isSocialMediaGroup =
+		group[locale] == 'Redes Sociais' || group[locale] == 'Social Medias'
 
 	const renderLucideIcon = (icon: PossibleIcons) => {
 		switch (icon) {
@@ -55,32 +59,38 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 
 	return (
 		<div>
-			<div className='pb-2 text-sm font-bold text-gray-400'>{group}</div>
+			<div className='pb-2 text-sm font-bold text-gray-400'>
+				{group[locale]}
+			</div>
 
 			<ul className='flex h-fit flex-col gap-2 p-2 pb-4'>
-				{itens.map((item, i) => (
-					<Link
-						key={`navbar-item-${i}`}
-						href={item.hrefTo}
-						target={group == 'Redes Sociais' ? '_blank' : '_self'}
-						data-aos='slide-right'
-						data-aos-delay={50 * i}
-					>
-						<DivScaleHoverActive>
-							<li
-								data-current={item.hrefTo == pathname}
-								className='group flex items-center gap-2'
-							>
-								<div className='p rounded border p-1 group-data-[current=true]:bg-green-600'>
-									{renderLucideIcon(item.icon)}
-								</div>
-								<span className='group-data-[current=true]:text-green-400'>
-									{item.label}
-								</span>
-							</li>
-						</DivScaleHoverActive>
-					</Link>
-				))}
+				{itens.map((item, i) => {
+					const pathWithLocale = `/${locale}${item.hrefTo}`
+
+					return (
+						<Link
+							key={`navbar-item-${i}`}
+							href={isSocialMediaGroup ? item.hrefTo : pathWithLocale}
+							target={item.target}
+							data-aos='slide-right'
+							data-aos-delay={50 * i}
+						>
+							<DivScaleHoverActive>
+								<li
+									data-current={pathWithLocale == pathname}
+									className='group flex items-center gap-2'
+								>
+									<div className='p rounded border p-1 group-data-[current=true]:bg-green-600'>
+										{renderLucideIcon(item.icon)}
+									</div>
+									<span className='group-data-[current=true]:text-green-400'>
+										{item.label[locale]}
+									</span>
+								</li>
+							</DivScaleHoverActive>
+						</Link>
+					)
+				})}
 			</ul>
 		</div>
 	)
