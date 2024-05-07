@@ -77,7 +77,7 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 						>
 							<DivScaleHoverActive>
 								<li
-									data-current={pathWithLocale == pathname}
+									data-current={pathname.includes(item.hrefTo)}
 									className='group flex items-center gap-2'
 								>
 									<div className='p rounded border p-1 group-data-[current=true]:bg-green-600'>
