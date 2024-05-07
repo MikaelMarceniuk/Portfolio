@@ -3,48 +3,90 @@ export type HomePageServiceIcon = 'PANEL_TOP' | 'UNPLUG' | 'LAPTOP'
 export type ServicePageIcon = 'ZAP' | 'CHROME' | 'SMARTPHONE' | 'WRENCH'
 
 export interface IServiceItem {
-	title: string
+	title: Record<'pt' | 'en', string>
 	icon: HomePageServiceIcon | ServicePageIcon
-	text: string
+	text: Record<'pt' | 'en', string>
 }
 
 export const HomePageServiceList: IServiceItem[] = [
 	{
-		title: 'UI & UX',
+		title: {
+			pt: 'UI & UX',
+			en: 'UI & UX',
+		},
 		icon: 'PANEL_TOP',
-		text: 'Criando experiências significativas e centradas no usuário por meio do design.',
+		text: {
+			pt: 'Criando experiências significativas e centradas no usuário por meio do design.',
+			en: 'Crafting meaningful, user-centered experiences through design.',
+		},
 	},
 	{
-		title: 'Design e Criatividade',
+		title: {
+			pt: 'Design e Criatividade',
+			en: 'Design and Creativity',
+		},
 		icon: 'UNPLUG',
-		text: 'Desenvolvendo designs visualmente deslumbrantes que se conectam com a sua audiência.',
+		text: {
+			pt: 'Desenvolvendo designs visualmente deslumbrantes que se conectam com a sua audiência.',
+			en: 'Crafting visually stunning designs that capture attention, convey emotions, and connect with your audience on a deeper level.',
+		},
 	},
 	{
-		title: 'Desenvolvimento',
+		title: {
+			pt: 'Desenvolvimento',
+			en: 'Development',
+		},
 		icon: 'LAPTOP',
-		text: 'Transformando sua visão em realidade com tecnologia de ponta e as últimas tendências de design.',
+		text: {
+			pt: 'Transformando sua visão em realidade com tecnologia de ponta e as últimas tendências de design.',
+			en: 'Bringing your vision to life with cutting-edge technology and design trends.',
+		},
 	},
 ] as const
 
 export const ServicePageItens: IServiceItem[] = [
 	{
-		title: 'Landing Page',
+		title: {
+			pt: 'Landing Page',
+			en: 'Landing Page',
+		},
 		icon: 'ZAP',
-		text: 'Crio landing pages que são visualmente impressionantes e otimizadas para altas conversões, levando o seu negócio para o próximo nível.',
+		text: {
+			pt: 'Crio landing pages que são visualmente impressionantes e otimizadas para altas conversões, levando o seu negócio para o próximo nível.',
+			en: 'I craft visually stunning landing pages that are not only aesthetically pleasing but also strategically designed to drive conversions and boost your business.',
+		},
 	},
 	{
-		title: 'Desenvolvimento de Aplicativos Web',
+		title: {
+			pt: 'Desenvolvimento de Aplicativos Web',
+			en: 'Web Development',
+		},
 		icon: 'CHROME',
-		text: 'Desenvolvo soluções escaláveis, seguras, usáveis, com tecnologias modernas e UX impecável para otimizar sua produtividade.',
+		text: {
+			pt: 'Desenvolvo soluções escaláveis, seguras, usáveis, com tecnologias modernas e UX impecável para otimizar sua produtividade.',
+			en: 'I craft scalable, secure, and user-friendly solutions that leverage modern technologies and impeccable UX design to optimize your productivity and streamline operations.',
+		},
 	},
 	{
-		title: 'Desenvolvimento de Aplicativos Mobile',
+		title: {
+			pt: 'Desenvolvimento de Aplicativos Mobile',
+			en: 'Mobile Development',
+		},
 		icon: 'SMARTPHONE',
-		text: 'Desenvolvo apps mobile sob medida: Android e iOS. Intuitivos, eficientes, com UX impecável. Publico e do suporte nas principais lojas.',
+		text: {
+			pt: 'Desenvolvo apps mobile sob medida: Android e iOS. Intuitivos, eficientes, com UX impecável. Publico e do suporte nas principais lojas.',
+			en: 'I specialize in developing custom-built Android and iOS mobile apps that are not only intuitive and efficient but also designed with impeccable UX principles in mind, ensuring a seamless and engaging user experience.',
+		},
 	},
 	{
-		title: 'Manutencao de Sistemas',
+		title: {
+			pt: 'Manutencao de Sistemas',
+			en: 'Maintenance and Systems',
+		},
 		icon: 'WRENCH',
-		text: 'Sistemas sempre funcionando: manutenção preventiva e corretiva para Windows, Linux, servidores, redes e muito mais. Atendimento personalizado e suporte técnico ágil.',
+		text: {
+			pt: 'Sistemas sempre funcionando: manutenção preventiva e corretiva para Windows, Linux, servidores, redes e muito mais. Atendimento personalizado e suporte técnico ágil.',
+			en: 'I specialize in providing comprehensive IT maintenance and support services to ensure that your systems, including Windows, Linux, servers, and networks, are always running smoothly and efficiently.',
+		},
 	},
 ] as const

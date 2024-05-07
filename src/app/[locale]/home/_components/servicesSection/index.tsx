@@ -1,28 +1,21 @@
 import { SectionTitle, SectionWrapper } from '@/components/baseSection'
-import {
-	ServiceCardContent,
-	ServiceCardHeader,
-	ServiceCardHeaderIcon,
-	ServiceCardWrapper,
-} from '@/components/baseServiceCard'
 import { HomePageServiceList } from '@/data/serviceItems'
+import { getTranslations } from 'next-intl/server'
+import CardItem from './_components/cardItem'
 
-const ServicesSection: React.FC = () => {
+const ServicesSection: React.FC = async () => {
+	const t = await getTranslations('HomePage')
+
 	return (
 		<SectionWrapper>
-			<SectionTitle title='Atuando em conjunto para alcançar resultados significativos.' />
+			<SectionTitle title={t('servicesSection.title')} />
 			<ul className='space-y-10 pt-6'>
 				{HomePageServiceList.map((item, i) => (
-					<ServiceCardWrapper
+					<CardItem
 						key={i}
 						data-aos={i % 2 ? 'zoom-in-right' : 'zoom-in-left'}
-					>
-						<ServiceCardHeader>
-							<ServiceCardHeaderIcon icon={item.icon} />
-							{item.title}
-						</ServiceCardHeader>
-						<ServiceCardContent>{item.text}</ServiceCardContent>
-					</ServiceCardWrapper>
+						{...item}
+					/>
 				))}
 			</ul>
 		</SectionWrapper>

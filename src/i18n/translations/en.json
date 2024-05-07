@@ -4,6 +4,41 @@
 			"title": "Creating digital products, strengthening the brand, and enhancing experiences.",
 			"subtitle": "I am a seasoned <span class='text-green-300'>full-stack web developer</span> with a <span class='text-green-300'>deep understanding</span> of both <span class='text-green-300'>front-end</span> and <span class='text-green-300'>back-end</span> technologies.",
 			"btnContact": "Connect with me"
+		},
+		"servicesSection": {
+			"title": "Collaborative efforts for impactful outcomes."
+		},
+		"contactSection": {
+			"title": "Ready to talk about your next big idea?"
+		}
+	},
+	"contactForm": {
+		"inputs": {
+			"name": {
+				"label": "Name",
+				"error": "O nome é obrigatório."
+			},
+			"email": {
+				"label": "Email",
+				"error": "O email é obrigatório."
+			},
+			"description": {
+				"label": "Brief description",
+				"error": "A descrição é obrigatória."
+			}
+		},
+		"submit": {
+			"button": {
+				"title": "Send"
+			},
+			"success": {
+				"title": "Thrilled that you're interested in our work, {name}",
+				"description": "Your email has been sent successfully! We will respond shortly."
+			},
+			"error": {
+				"title": "An error occurred while sending the email, {name}",
+				"description": "Check your internet connection and try again later."
+			}
 		}
 	}
 }

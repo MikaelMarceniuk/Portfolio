@@ -2,7 +2,9 @@ import Navbar from '@/components/navbar'
 import { Toaster } from '@/components/ui/toaster'
 import AosProvider from '@/context/aosProvider'
 import CustomQueryClientProvider from '@/context/customQueryClientProvider'
+import pick from 'lodash/pick'
 import type { Metadata, NextPage } from 'next'
+import { NextIntlClientProvider, useMessages } from 'next-intl'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -19,15 +21,19 @@ interface IRootLayoutProps {
 }
 
 const RootLayout: NextPage<IRootLayoutProps> = ({ children, params }) => {
+	const messages = useMessages()
+
 	return (
 		<html lang={params.locale} className='dark'>
 			<AosProvider />
 			<body className={`min-h-screen bg-background ${inter.className} lg:flex`}>
-				<CustomQueryClientProvider>
-					<Navbar />
-					<Toaster />
-					{children}
-				</CustomQueryClientProvider>
+				<NextIntlClientProvider messages={pick(messages, 'contactForm')}>
+					<CustomQueryClientProvider>
+						<Navbar />
+						<Toaster />
+						{children}
+					</CustomQueryClientProvider>
+				</NextIntlClientProvider>
 			</body>
 		</html>
 	)

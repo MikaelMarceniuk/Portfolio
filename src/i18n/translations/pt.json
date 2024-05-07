@@ -4,6 +4,41 @@
 			"title": "Criando produtos digitais, fortalecendo a marca e aprimorando experiências.",
 			"subtitle": "Sou especialista em <span class='text-green-300'>Web Designer</span> e <span class='text-green-300'>Desenvolvimento Full Stack.</span>",
 			"btnContact": "Entrar em contato"
+		},
+		"servicesSection": {
+			"title": "Atuando em conjunto para alcançar resultados significativos."
+		},
+		"contactSection": {
+			"title": "Vamos discutir seu próximo projeto."
+		}
+	},
+	"contactForm": {
+		"inputs": {
+			"name": {
+				"label": "Nome",
+				"error": "O nome é obrigatório."
+			},
+			"email": {
+				"label": "Email",
+				"error": "O email é obrigatório."
+			},
+			"description": {
+				"label": "Breve descrição",
+				"error": "A descrição é obrigatória."
+			}
+		},
+		"submit": {
+			"button": {
+				"title": "Enviar"
+			},
+			"success": {
+				"title": "Ficamos felizes em saber que você se interessou pelo nosso trabalho, {name}",
+				"description": "Seu email foi enviado com sucesso! Aguarde nossa resposta."
+			},
+			"error": {
+				"title": "Aconteceu um erro ao enviar email, {name}",
+				"description": "Verifique sua conexao com a internet e tente novamente mais tarde."
+			}
 		}
 	}
 }

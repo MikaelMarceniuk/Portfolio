@@ -16,20 +16,22 @@ import { useToast } from '@/components/ui/use-toast'
 import formatter from '@/utils/formatter'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
+import { useTranslations } from 'next-intl'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import DivScaleHoverActive from '../animations/divScaleHoverActive'
 
 const contactFormSchema = z.object({
-	name: z.string().min(1, 'O nome é obrigatório.'),
-	email: z.string().email('O email é obrigatório.'),
-	description: z.string().min(1, 'A descrição é obrigatória.'),
+	name: z.string().min(1),
+	email: z.string().email(),
+	description: z.string().min(1),
 })
 
 export type ContactFormType = z.infer<typeof contactFormSchema>
 
 const ContactForm = () => {
+	const t = useTranslations('contactForm')
 	const { toast } = useToast()
 	const form = useForm<ContactFormType>({
 		resolver: zodResolver(contactFormSchema),
@@ -48,16 +50,14 @@ const ContactForm = () => {
 		mutationFn: sendContactForm,
 		onSuccess: (_, { name }) => {
 			toast({
-				title: `Ficamos felizes em saber que você se interessou pelo nosso trabalho, ${name}.`,
-				description:
-					'Seu email foi enviado com sucesso! Aguarde nossa resposta.',
+				title: t('submit.success.title', { name }),
+				description: t('submit.success.description'),
 			})
 		},
 		onError: (error, { name }) => {
 			toast({
-				title: `Aconteceu um erro ao enviar email, ${name}.`,
-				description:
-					'Verifique sua conexao com a internet e tente novamente mais tarde.',
+				title: t('submit.error.title', { name }),
+				description: t('submit.error.description'),
 			})
 		},
 	})
@@ -86,7 +86,7 @@ const ContactForm = () => {
 					name='name'
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Nome</FormLabel>
+							<FormLabel>{t('inputs.name.label')}</FormLabel>
 							<FormControl>
 								<Input className='capitalize' {...field} />
 							</FormControl>
@@ -100,7 +100,7 @@ const ContactForm = () => {
 					name='email'
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Email</FormLabel>
+							<FormLabel>{t('inputs.email.label')}</FormLabel>
 							<FormControl>
 								<Input type='email' {...field} />
 							</FormControl>
@@ -114,7 +114,7 @@ const ContactForm = () => {
 					name='description'
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Breve descrição</FormLabel>
+							<FormLabel>{t('inputs.description.label')}</FormLabel>
 							<FormControl>
 								<Textarea className='min-h-40' {...field} />
 							</FormControl>
@@ -129,7 +129,7 @@ const ContactForm = () => {
 						type='submit'
 						disabled={form.formState.isSubmitting}
 					>
-						Enviar
+						{t('submit.button.title')}
 					</Button>
 				</DivScaleHoverActive>
 			</form>
