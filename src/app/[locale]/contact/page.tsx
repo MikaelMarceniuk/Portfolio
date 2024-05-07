@@ -8,17 +8,17 @@ import ContactForm from '@/components/contactForm'
 import links from '@/data/links'
 import { Github, Instagram, Linkedin } from 'lucide-react'
 import { NextPage } from 'next'
+import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 
-const ContactPage: NextPage = () => {
+const ContactPage: NextPage = async () => {
+	const t = await getTranslations('ContactPage')
+
 	return (
 		<main className='w-full lg:m-auto lg:max-w-[690px] lg:pt-24'>
 			<SectionWrapper>
-				<SectionTitle title='Entre em contato' />
-				<SectionSubtitle>
-					Tem um projeto em mente? Quer fazer parceria ou trabalhar comigo?
-					Entre em contato pelo formulário e responderei nas próximas 48 horas.
-				</SectionSubtitle>
+				<SectionTitle title={t('title')} />
+				<SectionSubtitle>{t('subtitle')}</SectionSubtitle>
 
 				<div className='flex items-center justify-center gap-2'>
 					<DivScaleHoverActive>

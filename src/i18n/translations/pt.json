@@ -16,6 +16,10 @@
 		"title": "Servicos",
 		"subtitle": "Desenvolvimento de Landing Page, Aplicativos Web, Mobile, APIs. Manutenção de sistemas. Você que manda."
 	},
+	"ContactPage": {
+		"title": "Entre em contato",
+		"subtitle": "Tem um projeto em mente? Quer fazer parceria ou trabalhar comigo? Entre em contato pelo formulário e responderei nas próximas 48 horas."
+	},
 	"contactForm": {
 		"inputs": {
 			"name": {

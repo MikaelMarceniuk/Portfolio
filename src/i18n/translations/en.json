@@ -16,6 +16,10 @@
 		"title": "Services",
 		"subtitle": "I provide a full range of IT development and maintenance services, including Landing Pages, Web Applications, Mobile Applications, APIs, and System Maintenance. We work closely with our clients to understand their unique needs and deliver tailored solutions that meet their specific requirements."
 	},
+	"ContactPage": {
+		"title": "Get in touch with me",
+		"subtitle": "Whether you have a project in mind, seeking a partner, or looking for freelance services, I'm here to help. Contact me through the form, and I'll respond within 48 hours."
+	},
 	"contactForm": {
 		"inputs": {
 			"name": {
