@@ -12,6 +12,10 @@
 			"title": "Vamos discutir seu próximo projeto."
 		}
 	},
+	"ServicesPage": {
+		"title": "Servicos",
+		"subtitle": "Desenvolvimento de Landing Page, Aplicativos Web, Mobile, APIs. Manutenção de sistemas. Você que manda."
+	},
 	"contactForm": {
 		"inputs": {
 			"name": {

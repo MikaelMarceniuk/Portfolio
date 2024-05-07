@@ -3,38 +3,30 @@ import {
 	SectionTitle,
 	SectionWrapper,
 } from '@/components/baseSection'
-import {
-	ServiceCardContent,
-	ServiceCardHeader,
-	ServiceCardHeaderIcon,
-	ServiceCardWrapper,
-} from '@/components/baseServiceCard'
 import { ServicePageItens } from '@/data/serviceItems'
 import { NextPage } from 'next'
+import { getTranslations } from 'next-intl/server'
+import CardItem from './_components/cardItem'
 
-const ServicesPage: NextPage = () => {
+const ServicesPage: NextPage = async () => {
+	const t = await getTranslations('ServicesPage')
+
 	return (
 		<main className='w-full lg:m-auto lg:max-w-[690px] lg:pt-24'>
 			<SectionWrapper>
-				<SectionTitle title='Servicos' />
+				<SectionTitle title={t('title')} />
 				<SectionSubtitle className='text-sm font-medium text-gray-400'>
-					Desenvolvimento de Landing Page, Aplicativos Web, Mobile, APIs.
-					Manutenção de sistemas. Você que manda.
+					{t('subtitle')}
 				</SectionSubtitle>
 
 				<ul className='space-y-10 pt-4'>
 					{ServicePageItens.map((item, i) => (
-						<ServiceCardWrapper
+						<CardItem
 							key={i}
 							data-aos={i % 2 ? 'zoom-in-right' : 'zoom-in-left'}
 							data-aos-offset='-200'
-						>
-							<ServiceCardHeader>
-								<ServiceCardHeaderIcon icon={item.icon} />
-								{item.title}
-							</ServiceCardHeader>
-							<ServiceCardContent>{item.text}</ServiceCardContent>
-						</ServiceCardWrapper>
+							{...item}
+						/>
 					))}
 				</ul>
 			</SectionWrapper>

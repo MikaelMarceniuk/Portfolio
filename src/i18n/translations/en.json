@@ -12,6 +12,10 @@
 			"title": "Ready to talk about your next big idea?"
 		}
 	},
+	"ServicesPage": {
+		"title": "Services",
+		"subtitle": "I provide a full range of IT development and maintenance services, including Landing Pages, Web Applications, Mobile Applications, APIs, and System Maintenance. We work closely with our clients to understand their unique needs and deliver tailored solutions that meet their specific requirements."
+	},
 	"contactForm": {
 		"inputs": {
 			"name": {
