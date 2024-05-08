@@ -50,6 +50,9 @@
 		}
 	},
 	"languageSelector": {
+		"accessibility": {
+			"button": "Button to access and open the website's menu of available languages."
+		},
 		"title": "Current Language",
 		"portuguese": "Portuguese",
 		"english": "English"
@@ -60,5 +63,12 @@
 		"homePage": "Home",
 		"servicesPage": "Services",
 		"contactPage": "Contact"
+	},
+	"accessibility": {
+		"navbar": {
+			"mobile": {
+				"navbarMenuButton": "Button to access and open the website menu."
+			}
+		}
 	}
 }

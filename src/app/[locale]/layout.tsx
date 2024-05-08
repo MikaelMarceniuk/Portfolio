@@ -46,6 +46,7 @@ const RootLayout: NextPage<IRootLayoutProps> = ({ children, params }) => {
 					messages={{
 						...pick(messages, 'contactForm'),
 						...pick(messages, 'languageSelector'),
+						...pick(messages, 'accessibility'),
 					}}
 				>
 					<CustomQueryClientProvider>

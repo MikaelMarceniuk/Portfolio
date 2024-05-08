@@ -26,9 +26,10 @@ type PossibleIcons = NavigationIcons | SocialIcons
 const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 	const pathname = usePathname()
 	const locale = useLocale()
-	const isSocialMediaGroup =
-	{/* @ts-ignore */}
-		group[locale] == 'Redes Sociais' || group[locale] == 'Social Medias'
+	const isSocialMediaGroup = {
+		/* @ts-ignore */
+	}
+	group[locale] == 'Redes Sociais' || group[locale] == 'Social Medias'
 
 	const renderLucideIcon = (icon: PossibleIcons) => {
 		switch (icon) {
@@ -60,10 +61,10 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 
 	return (
 		<div>
-			<div className='pb-2 text-sm font-bold text-gray-400'>
+			<p className='pb-2 text-sm font-bold text-gray-400'>
 				{/* @ts-ignore */}
 				{group[locale]}
-			</div>
+			</p>
 
 			<ul className='flex h-fit flex-col gap-2 p-2 pb-4'>
 				{itens.map((item, i) => {
@@ -73,16 +74,15 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 						(isSocialMediaGroup && item.hrefTo[locale]) || item.hrefTo
 
 					return (
-						<Link
-							key={`navbar-item-${i}`}
-							href={isSocialMediaGroup ? socialMediaLink : pathWithLocale}
-							locale={locale}
-							target={item.target}
-							data-aos='slide-right'
-							data-aos-delay={50 * i}
-						>
-							<DivScaleHoverActive>
-								<li
+						<li key={`navbar-item-${i}`}>
+							<Link
+								href={isSocialMediaGroup ? socialMediaLink : pathWithLocale}
+								locale={locale}
+								target={item.target}
+								data-aos='slide-right'
+								data-aos-delay={50 * i}
+							>
+								<DivScaleHoverActive
 									data-current={pathname.includes(item.hrefTo)}
 									className='group flex items-center gap-2'
 								>
@@ -93,9 +93,9 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 										{/* @ts-ignore */}
 										{item.label[locale]}
 									</span>
-								</li>
-							</DivScaleHoverActive>
-						</Link>
+								</DivScaleHoverActive>
+							</Link>
+						</li>
 					)
 				})}
 			</ul>

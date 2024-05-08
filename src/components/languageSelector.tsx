@@ -26,7 +26,10 @@ const LanguageSelector: React.FC = () => {
 			<div className='pb-4 text-sm font-bold text-gray-400'>{t('title')}</div>
 
 			<Select onValueChange={handleOnValueChange} value={locale}>
-				<SelectTrigger className='w-full'>
+				<SelectTrigger
+					className='w-full'
+					aria-label={t('accessibility.button')}
+				>
 					<SelectValue placeholder='Language' />
 				</SelectTrigger>
 				<SelectContent>
