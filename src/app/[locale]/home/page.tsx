@@ -1,7 +1,16 @@
-import { NextPage } from 'next'
+import { Metadata, NextPage } from 'next'
+import { getTranslations } from 'next-intl/server'
 import ContactSection from './_components/contactSection'
 import HeroSection from './_components/heroSection'
 import ServicesSection from './_components/servicesSection'
+
+export async function generateMetadata(): Promise<Metadata> {
+	const t = await getTranslations('SEO')
+
+	return {
+		title: t('homePage'),
+	}
+}
 
 const MainPage: NextPage = () => {
 	return (

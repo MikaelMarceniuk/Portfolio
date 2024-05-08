@@ -53,5 +53,12 @@
 		"title": "Current Language",
 		"portuguese": "Portuguese",
 		"english": "English"
+	},
+	"SEO": {
+		"title": "Fullstack Developer Node and React",
+		"description": "I bring your ideas to life using cutting-edge and current technologies.",
+		"homePage": "Home",
+		"servicesPage": "Services",
+		"contactPage": "Contact"
 	}
 }

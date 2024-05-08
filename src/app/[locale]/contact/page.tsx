@@ -7,9 +7,17 @@ import {
 import ContactForm from '@/components/contactForm'
 import links from '@/data/links'
 import { Github, Instagram, Linkedin } from 'lucide-react'
-import { NextPage } from 'next'
+import { Metadata, NextPage } from 'next'
 import { getLocale, getTranslations } from 'next-intl/server'
 import Link from 'next/link'
+
+export async function generateMetadata(): Promise<Metadata> {
+	const t = await getTranslations('SEO')
+
+	return {
+		title: t('contactPage'),
+	}
+}
 
 const ContactPage: NextPage = async () => {
 	const t = await getTranslations('ContactPage')

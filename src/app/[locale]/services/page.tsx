@@ -4,9 +4,17 @@ import {
 	SectionWrapper,
 } from '@/components/baseSection'
 import { ServicePageItens } from '@/data/serviceItems'
-import { NextPage } from 'next'
+import { Metadata, NextPage } from 'next'
 import { getTranslations } from 'next-intl/server'
 import CardItem from './_components/cardItem'
+
+export async function generateMetadata(): Promise<Metadata> {
+	const t = await getTranslations('SEO')
+
+	return {
+		title: t('servicesPage'),
+	}
+}
 
 const ServicesPage: NextPage = async () => {
 	const t = await getTranslations('ServicesPage')
