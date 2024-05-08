@@ -2,7 +2,7 @@
 	"HomePage": {
 		"heroSection": {
 			"title": "Creating digital products, strengthening the brand, and enhancing experiences.",
-			"subtitle": "I am a seasoned <span class='text-green-300'>full-stack web developer</span> with a <span class='text-green-300'>deep understanding</span> of both <span class='text-green-300'>front-end</span> and <span class='text-green-300'>back-end</span> technologies.",
+			"subtitle": "I am a seasoned <strong>full-stack web developer</strong> with a <strong>deep understanding</strong> of both <strong>front-end</strong> and <strong>back-end</strong> technologies.",
 			"btnContact": "Connect with me"
 		},
 		"servicesSection": {

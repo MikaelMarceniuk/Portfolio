@@ -2,7 +2,7 @@
 	"HomePage": {
 		"heroSection": {
 			"title": "Criando produtos digitais, fortalecendo a marca e aprimorando experiências.",
-			"subtitle": "Sou especialista em <span class='text-green-300'>Web Designer</span> e <span class='text-green-300'>Desenvolvimento Full Stack.</span>",
+			"subtitle": "Sou especialista em <strong>Web Designer</strong> e <strong>Desenvolvimento Full Stack.</strong>",
 			"btnContact": "Entrar em contato"
 		},
 		"servicesSection": {

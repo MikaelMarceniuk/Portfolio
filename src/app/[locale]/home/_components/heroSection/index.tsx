@@ -15,6 +15,7 @@ const HeroSection: React.FC = async () => {
 		<SectionWrapper>
 			<SectionTitle title={t('heroSection.title')} />
 			<SectionSubtitle
+				className='*:text-green-400'
 				dangerouslySetInnerHTML={{ __html: t.raw('heroSection.subtitle') }}
 			></SectionSubtitle>
 
