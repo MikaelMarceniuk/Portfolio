@@ -26,10 +26,9 @@ type PossibleIcons = NavigationIcons | SocialIcons
 const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 	const pathname = usePathname()
 	const locale = useLocale()
-	const isSocialMediaGroup = {
-		/* @ts-ignore */
-	}
-	group[locale] == 'Redes Sociais' || group[locale] == 'Social Medias'
+	const isSocialMediaGroup =
+		{ /* @ts-ignore */ }
+		group[locale] == 'Redes Sociais' || group[locale] == 'Social Medias'
 
 	const renderLucideIcon = (icon: PossibleIcons) => {
 		switch (icon) {
