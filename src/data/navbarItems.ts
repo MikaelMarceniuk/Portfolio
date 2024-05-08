@@ -94,6 +94,7 @@ const NavbarItems: INavbarItem[] = [
 					pt: 'Baixar CV',
 					en: 'Download CV',
 				},
+				// @ts-ignore
 				hrefTo: links.downloadCv,
 				icon: 'CV',
 				target: '_blank',
