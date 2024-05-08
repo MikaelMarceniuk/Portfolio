@@ -27,7 +27,12 @@ const RootLayout: NextPage<IRootLayoutProps> = ({ children, params }) => {
 		<html lang={params.locale} className='dark'>
 			<AosProvider />
 			<body className={`min-h-screen bg-background ${inter.className} lg:flex`}>
-				<NextIntlClientProvider messages={pick(messages, 'contactForm')}>
+				<NextIntlClientProvider
+					messages={{
+						...pick(messages, 'contactForm'),
+						...pick(messages, 'languageSelector'),
+					}}
+				>
 					<CustomQueryClientProvider>
 						<Navbar />
 						<Toaster />

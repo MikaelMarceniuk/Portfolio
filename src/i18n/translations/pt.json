@@ -48,5 +48,10 @@
 				"description": "Verifique sua conexao com a internet e tente novamente mais tarde."
 			}
 		}
+	},
+	"languageSelector": {
+		"title": "Idioma Atual",
+		"portuguese": "Portugues",
+		"english": "Ingles"
 	}
 }

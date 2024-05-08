@@ -4,6 +4,7 @@ import NavbarItems from '@/data/navbarItems'
 import { AccordionItem } from '@radix-ui/react-accordion'
 import { Menu, X } from 'lucide-react'
 import DivScaleHoverActive from '../animations/divScaleHoverActive'
+import LanguageSelector from '../languageSelector'
 import { Accordion, AccordionContent, AccordionTrigger } from '../ui/accordion'
 import NavbarListGroup from './_components/listGroup'
 
@@ -26,6 +27,8 @@ const Navbar: React.FC = () => {
 							{NavbarItems.map((item, i) => (
 								<NavbarListGroup key={`list-group-${i}`} {...item} />
 							))}
+
+							<LanguageSelector />
 						</div>
 					</AccordionContent>
 				</AccordionItem>
@@ -38,6 +41,8 @@ const Navbar: React.FC = () => {
 				{NavbarItems.map((item, i) => (
 					<NavbarListGroup key={`list-group-${i}`} {...item} />
 				))}
+
+				<LanguageSelector />
 			</div>
 		</div>
 	)

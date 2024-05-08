@@ -48,5 +48,10 @@
 				"description": "Check your internet connection and try again later."
 			}
 		}
+	},
+	"languageSelector": {
+		"title": "Current Language",
+		"portuguese": "Portuguese",
+		"english": "English"
 	}
 }
