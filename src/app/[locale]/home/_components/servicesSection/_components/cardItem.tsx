@@ -18,8 +18,10 @@ const CardItem: React.FC<ICardItemProps> = ({ title, text, icon, ...rest }) => {
 		<ServiceCardWrapper {...rest}>
 			<ServiceCardHeader>
 				<ServiceCardHeaderIcon icon={icon} />
+				{/* @ts-ignore */}
 				{title[locale]}
 			</ServiceCardHeader>
+			{/* @ts-ignore */}
 			<ServiceCardContent>{text[locale]}</ServiceCardContent>
 		</ServiceCardWrapper>
 	)

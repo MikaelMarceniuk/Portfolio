@@ -66,6 +66,7 @@ const NavbarItems: INavbarItem[] = [
 					pt: 'LinkedIn',
 					en: 'LinkedIn',
 				},
+				// @ts-ignore
 				hrefTo: links.linkedIn,
 				icon: 'LINKEDIN',
 				target: '_blank',

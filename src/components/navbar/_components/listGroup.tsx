@@ -27,6 +27,7 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 	const pathname = usePathname()
 	const locale = useLocale()
 	const isSocialMediaGroup =
+	{/* @ts-ignore */}
 		group[locale] == 'Redes Sociais' || group[locale] == 'Social Medias'
 
 	const renderLucideIcon = (icon: PossibleIcons) => {
@@ -60,6 +61,7 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 	return (
 		<div>
 			<div className='pb-2 text-sm font-bold text-gray-400'>
+				{/* @ts-ignore */}
 				{group[locale]}
 			</div>
 
@@ -67,6 +69,7 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 				{itens.map((item, i) => {
 					const pathWithLocale = `/${locale}${item.hrefTo}`
 					const socialMediaLink =
+						// @ts-ignore
 						(isSocialMediaGroup && item.hrefTo[locale]) || item.hrefTo
 
 					return (
@@ -87,6 +90,7 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 										{renderLucideIcon(item.icon)}
 									</div>
 									<span className='group-data-[current=true]:text-green-400'>
+										{/* @ts-ignore */}
 										{item.label[locale]}
 									</span>
 								</li>

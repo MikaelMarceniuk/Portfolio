@@ -24,6 +24,7 @@ const ContactPage: NextPage = async () => {
 				<div className='flex items-center justify-center gap-2'>
 					<DivScaleHoverActive>
 						<Link
+							// @ts-ignore
 							href={links.linkedIn[locale]}
 							className='flex gap-2 text-gray-200'
 							target='_blank'

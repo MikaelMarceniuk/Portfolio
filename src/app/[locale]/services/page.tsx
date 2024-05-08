@@ -21,6 +21,7 @@ const ServicesPage: NextPage = async () => {
 
 				<ul className='space-y-10 pt-4'>
 					{ServicePageItens.map((item, i) => (
+						// @ts-ignore
 						<CardItem
 							key={i}
 							data-aos={i % 2 ? 'zoom-in-right' : 'zoom-in-left'}

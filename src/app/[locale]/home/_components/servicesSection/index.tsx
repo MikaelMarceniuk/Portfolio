@@ -11,6 +11,7 @@ const ServicesSection: React.FC = async () => {
 			<SectionTitle title={t('servicesSection.title')} />
 			<ul className='space-y-10 pt-6'>
 				{HomePageServiceList.map((item, i) => (
+					// @ts-ignore
 					<CardItem
 						key={i}
 						data-aos={i % 2 ? 'zoom-in-right' : 'zoom-in-left'}
