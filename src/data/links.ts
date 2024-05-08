@@ -5,6 +5,8 @@ export default {
 	},
 	instagram: 'https://www.instagram.com/mi.ka__779/',
 	github: 'https://github.com/MikaelMarceniuk',
-	downloadCv:
-		'https://drive.google.com/file/d/14FulwZnz8-JLYjvcl4pnN9z80SCJBU4p/view?usp=sharing',
+	downloadCv: {
+		pt: 'https://drive.google.com/file/d/1zUbAwumagaAEhGL3jicPy_G1OBKvK4JY/view?usp=sharing',
+		en: 'https://drive.google.com/file/d/16UkptoMNm8hKq3AQtWQV07ahC18hi2wv/view?usp=sharing',
+	},
 } as const
