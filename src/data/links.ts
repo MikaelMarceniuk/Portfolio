@@ -1,5 +1,8 @@
 export default {
-	linkedIn: 'https://www.linkedin.com/in/mikael-marceniuk/',
+	linkedIn: {
+		pt: 'https://www.linkedin.com/in/mikael-marceniuk/',
+		en: 'https://www.linkedin.com/in/mikael-marceniuk/?locale=en_US#/',
+	},
 	instagram: 'https://www.instagram.com/mi.ka__779/',
 	github: 'https://github.com/MikaelMarceniuk',
 	downloadCv:

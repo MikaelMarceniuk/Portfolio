@@ -66,11 +66,14 @@ const NavbarListGroup: React.FC<INavbarItem> = ({ group, itens }) => {
 			<ul className='flex h-fit flex-col gap-2 p-2 pb-4'>
 				{itens.map((item, i) => {
 					const pathWithLocale = `/${locale}${item.hrefTo}`
+					const socialMediaLink =
+						(isSocialMediaGroup && item.hrefTo[locale]) || item.hrefTo
 
 					return (
 						<Link
 							key={`navbar-item-${i}`}
-							href={isSocialMediaGroup ? item.hrefTo : pathWithLocale}
+							href={isSocialMediaGroup ? socialMediaLink : pathWithLocale}
+							locale={locale}
 							target={item.target}
 							data-aos='slide-right'
 							data-aos-delay={50 * i}
