@@ -27,6 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 				en: 'https://mikadev.com.br/en',
 			},
 		},
+		verification: {
+			google: 'sT9CNYLbctJMffhbFSV0s-fZu-rVhZUz4x8rTO35fQ0',
+		},
 	}
 }
 
