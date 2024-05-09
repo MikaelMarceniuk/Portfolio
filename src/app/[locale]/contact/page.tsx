@@ -16,6 +16,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	return {
 		title: t('contactPage'),
+		alternates: {
+			languages: {
+				pt: 'https://mikadev.com.br/pt/contact',
+				en: 'https://mikadev.com.br/en/contact',
+			},
+		},
 	}
 }
 

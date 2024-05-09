@@ -9,6 +9,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	return {
 		title: t('homePage'),
+		alternates: {
+			languages: {
+				pt: 'https://mikadev.com.br/pt/home',
+				en: 'https://mikadev.com.br/en/home',
+			},
+		},
 	}
 }
 

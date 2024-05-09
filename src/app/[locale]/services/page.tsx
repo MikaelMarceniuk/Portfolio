@@ -13,6 +13,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 	return {
 		title: t('servicesPage'),
+		alternates: {
+			languages: {
+				pt: 'https://mikadev.com.br/pt/services',
+				en: 'https://mikadev.com.br/en/services',
+			},
+		},
 	}
 }
 
